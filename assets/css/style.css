@@ -354,3 +354,90 @@ nav.main a:not(.active)::after{content:"";position:absolute;left:10px;right:10px
 nav.main a:not(.active):hover::after{transform:scaleX(1)}
 @media (max-width:1240px){nav.main a::after{display:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+
+/* =========================================================
+   v2 düzenlemeleri: sade hero, alt menülü navbar, CTA'lar
+   ========================================================= */
+
+/* ---------- Navbar: 6 ana öğe + alt menüler ---------- */
+nav.main{gap:4px;align-items:center}
+nav.main a{font-size:.9rem;padding:9px 12px}
+.dd{position:relative}
+.dd > a{display:inline-flex;align-items:center;gap:6px}
+.caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);opacity:.6;transition:transform .2s}
+.dd .sub{position:absolute;top:100%;left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(28,37,65,.14);padding:8px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;margin-top:6px;z-index:5}
+.dd .sub::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
+.dd:hover .sub,.dd:focus-within .sub{opacity:1;visibility:visible;transform:none}
+.dd:hover .caret,.dd:focus-within .caret{transform:translateY(1px) rotate(225deg)}
+.dd .sub a{font-weight:600;font-size:.88rem;padding:10px 12px;border-radius:10px;white-space:nowrap}
+.dd .sub a::after{display:none}
+.dd .sub a.active{background:var(--tan-soft);color:var(--ink)}
+.nav-cta{padding:9px 16px;font-size:.85rem;flex-shrink:0;margin-left:6px}
+.brand .bt{display:block}
+@media (max-width:1240px){
+  .brand .bt{display:block}
+  nav.main{gap:0;align-items:stretch}
+  .dd .sub{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;border-left:2px solid var(--line);border-radius:0;margin:0 0 6px 14px;padding:0 0 0 8px;min-width:0}
+  .dd .sub::before{display:none}
+  .caret{display:none}
+  .nav-cta{display:none}
+}
+@media (max-width:560px){.brand .bt{display:none}}
+
+/* ---------- Hero: sade, tek odak ---------- */
+.hero .wrap{padding:64px 0 72px}
+.hero-kicker{font:700 .78rem var(--head);letter-spacing:.16em;text-transform:uppercase;color:var(--tan);margin:0 0 18px}
+.hero-kicker > span:first-child{opacity:.5;margin:0 4px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin:-6px 0 22px}
+.badge{display:inline-flex;align-items:center;gap:8px;font:600 .85rem var(--head);padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid var(--line);color:var(--ink-soft)}
+.badge b{color:var(--ink)}
+.badge.free{background:var(--navy);border-color:var(--navy);color:#fff}
+.badge .tick{width:16px;height:16px;border-radius:50%;background:#fff;position:relative;flex-shrink:0}
+.badge .tick::after{content:"";position:absolute;left:5px;top:3px;width:4px;height:7px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:rotate(45deg)}
+@media (max-width:900px){.hero .wrap{padding:28px 0 44px}}
+
+/* ---------- Tema bağlantıları (tıklanabilir liste) ---------- */
+.theme-links{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.theme-links .tl{display:flex;align-items:center;gap:14px;padding:13px 4px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);font:600 .98rem var(--head);transition:color .2s,padding .2s,background .2s}
+.theme-links .tl b{color:var(--tan);font-weight:800;min-width:24px}
+.theme-links .tl .arr{margin-left:auto;color:var(--tan);opacity:.5;transition:transform .2s,opacity .2s}
+.theme-links .tl:hover,.theme-links .tl:focus-visible{color:var(--navy);padding-left:10px;background:linear-gradient(90deg,var(--tan-soft),transparent)}
+.theme-links .tl:hover .arr,.theme-links .tl:focus-visible .arr{opacity:1;transform:translateX(4px)}
+.sub-theme{scroll-margin-top:110px}
+.sub-theme.flash{animation:flash 1.8s ease}
+@keyframes flash{0%,30%{box-shadow:0 0 0 3px var(--tan),var(--shadow)}100%{box-shadow:var(--shadow)}}
+#ozet-formu{scroll-margin-top:90px}
+
+/* ---------- Bildiri CTA bandı ---------- */
+.cta-band{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+
+.cta-band .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;padding:56px 0;position:relative;z-index:1}
+.cta-band .kicker{font:700 .75rem var(--head);letter-spacing:.18em;text-transform:uppercase;color:#f0c79a;display:block;margin-bottom:6px}
+.cta-band h2{color:#fff;margin-bottom:.4em}
+.cta-band p{color:#c9d3ee;margin:0;max-width:560px}
+.cta-side{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.deadline{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:12px 18px}
+.deadline small{font:700 .72rem var(--head);letter-spacing:.14em;text-transform:uppercase;color:#aeb8d6}
+.deadline b{font:800 1.35rem var(--head)}
+.deadline span{font:600 .85rem var(--head);color:#f0c79a}
+.btn.ghost-light{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}
+.btn.ghost-light:hover{background:#fff;color:var(--navy);border-color:#fff}
+.btn.tan:hover{background:#8f6640;border-color:#8f6640}
+@media (max-width:800px){.cta-band .wrap{grid-template-columns:1fr;gap:24px;padding:44px 0}}
+
+/* ---------- Kısa galeri şeridi ---------- */
+.gallery-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery-strip a{display:block;border-radius:14px;overflow:hidden;aspect-ratio:4/3;max-width:100%}
+.gallery-strip img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery-strip a:hover img{transform:scale(1.05)}
+@media (max-width:700px){.gallery-strip{grid-template-columns:repeat(3,1fr);gap:6px}.gallery-strip .hide-m{display:none}.gallery-strip a{border-radius:10px}}
+
+/* ---------- Footer CTA ve iletişim ---------- */
+.foot-cta{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:20px 24px;margin-bottom:36px}
+.foot-cta > div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.foot-cta b{color:#fff;font-family:var(--head)}
+footer.site .contacts{columns:1}
+footer.site .contacts li{display:flex;flex-direction:column;margin-bottom:10px}
+footer.site .contacts li span{font-size:.78rem;color:#9aa5c8;letter-spacing:.04em}
+nav.main a.m-cta{display:none}
+@media (max-width:1240px){nav.main a.m-cta{display:inline-flex;justify-content:center;color:#fff;margin-top:10px;padding:13px 20px}nav.main a.m-cta::after{display:none}}

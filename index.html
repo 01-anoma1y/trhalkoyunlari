@@ -13,7 +13,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="assets/css/show.css">
 </head>
 <body>
 
@@ -35,18 +34,31 @@
       <span class="bt">UHOK – IFDC 2026<small lang="tr">5. Uluslararası Kongre</small><small lang="en">5th International Congress</small></span>
     </a>
     <button class="burger" aria-label="Menü">☰</button>
-    <nav class="main">
-      <a href="#anasayfa"><span lang="tr">Ana Sayfa</span><span lang="en">Home</span></a>
-      <a href="#kongre"><span lang="tr">Kongre</span><span lang="en">Congress</span></a>
-      <a href="#tema"><span lang="tr">Tema ve Konular</span><span lang="en">Theme &amp; Topics</span></a>
-      <a href="#tarihler"><span lang="tr">Önemli Tarihler</span><span lang="en">Important Dates</span></a>
-      <a href="#kurullar"><span lang="tr">Kurullar</span><span lang="en">Committees</span></a>
-      <a href="#bildiri"><span lang="tr">Bildiri Gönderimi</span><span lang="en">Submissions</span></a>
-      <a href="#kayit"><span lang="tr">Kayıt</span><span lang="en">Registration</span></a>
-      <a href="#program"><span lang="tr">Program</span><span lang="en">Program</span></a>
+    <nav class="main" aria-label="Ana menü">
+      <div class="dd">
+        <a href="#kongre" data-group="kongre kurullar tarihler galeri" aria-haspopup="true"><span lang="tr">Kongre</span><span lang="en">Congress</span><span class="caret" aria-hidden="true"></span></a>
+        <div class="sub">
+          <a href="#kongre"><span lang="tr">Kongre Hakkında</span><span lang="en">About the Congress</span></a>
+          <a href="#kurullar"><span lang="tr">Kurullar</span><span lang="en">Committees</span></a>
+          <a href="#tarihler"><span lang="tr">Önemli Tarihler</span><span lang="en">Important Dates</span></a>
+          <a href="#galeri"><span lang="tr">Önceki Kongreden</span><span lang="en">Previous Congress</span></a>
+        </div>
+      </div>
+      <a href="#tema"><span lang="tr">Temalar</span><span lang="en">Themes</span></a>
+      <div class="dd">
+        <a href="#bildiri" data-group="bildiri kayit" aria-haspopup="true"><span lang="tr">Bildiri</span><span lang="en">Papers</span><span class="caret" aria-hidden="true"></span></a>
+        <div class="sub">
+          <a href="#bildiri"><span lang="tr">Bildiri Gönderimi ve Kurallar</span><span lang="en">Submission &amp; Guidelines</span></a>
+          <a href="#bildiri/ozet-formu"><span lang="tr">Özet Gönderim Formu</span><span lang="en">Abstract Form</span></a>
+          <a href="#kayit"><span lang="tr">Kayıt</span><span lang="en">Registration</span></a>
+        </div>
+      </div>
+      <a href="#program">Program</a>
       <a href="#konaklama"><span lang="tr">Konaklama</span><span lang="en">Accommodation</span></a>
       <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+      <a class="btn primary m-cta" href="#bildiri/ozet-formu"><span lang="tr">Bildiri Özeti Gönder</span><span lang="en">Submit an Abstract</span> →</a>
     </nav>
+    <a class="btn primary nav-cta" href="#bildiri/ozet-formu"><span lang="tr">Özet Gönder</span><span lang="en">Submit</span></a>
     <div class="lang" role="group" aria-label="Dil / Language">
       <button data-l="tr">TR</button><button data-l="en">EN</button>
     </div>
@@ -58,34 +70,28 @@
 <!-- =================== ANA SAYFA =================== -->
 <div class="page" id="p-anasayfa">
   <section class="hero">
-    <div class="hero-marquee" aria-hidden="true"><div class="track"><div>HALAY · ZEYBEK · HORON · BAR · KARŞILAMA · TEKE · KAŞIK · KAFKAS ·&nbsp;</div><div>HALAY · ZEYBEK · HORON · BAR · KARŞILAMA · TEKE · KAŞIK · KAFKAS ·&nbsp;</div></div></div>
-    <div class="halay" aria-hidden="true"></div>
     <div class="wrap">
       <div>
-        <div class="logos">
-          <img src="assets/logos/sakarya-universitesi.png" alt="Sakarya Üniversitesi">
-          <span class="sep"></span>
-          <img class="thof" src="assets/logos/thof-yatay.png" alt="Türkiye Halk Oyunları Federasyonu">
-        </div>
-        <p class="uhok">UHOK – IFDC</p>
-        <div class="orgs">Sakarya Üniversitesi | Sakarya University<br>Türkiye Halk Oyunları Federasyonu | Turkish Folk Dances Federation</div>
+        <p class="hero-kicker">UHOK – IFDC 2026 <span>·</span> <span lang="tr">Sakarya Üniversitesi &amp; THOF</span><span lang="en">Sakarya University &amp; THOF</span></p>
         <h1 lang="tr"><span class="no">5.</span> Uluslararası Halk Oyunları Kongresi</h1>
         <h1 lang="en"><span class="no">5th</span> International Folk Dance Congress</h1>
         <p class="sub" lang="tr">“Gelenek ve Gelecek Arasında: Halk Oyunlarında Aktarım, Dönüşüm ve Dijital Miras”</p>
         <p class="sub" lang="en">“Between Tradition and the Future: Transmission, Transformation, and Digital Heritage in Folk Dance”</p>
         <div class="meta">
-          <div><b lang="tr">10–12 Aralık 2026</b><b lang="en">10–12 December 2026</b><span lang="tr">Perşembe – Cumartesi</span><span lang="en">Thursday – Saturday</span></div>
+          <div><b lang="tr">10–12 Aralık 2026</b><b lang="en">10–12 December 2026</b><span data-weekrange="2026-12-10,2026-12-12"></span></div>
           <div><b>Sakarya</b><span lang="tr">Turgut Özal Kültür ve Kongre Merkezi</span><span lang="en">Turgut Özal Culture &amp; Congress Center</span></div>
+        </div>
+        <div class="badges">
+          <span class="badge free"><span class="tick" aria-hidden="true"></span><span lang="tr">Katılım Ücretsiz</span><span lang="en">Free Participation</span></span>
         </div>
         <div class="btns">
           <a class="btn primary" href="#bildiri/ozet-formu"><span lang="tr">Bildiri Özeti Gönder</span><span lang="en">Submit an Abstract</span> →</a>
           <a class="btn ghost" href="#kayit"><span lang="tr">Kayıt Ol</span><span lang="en">Register</span></a>
         </div>
-        <div class="countdown" aria-live="off"></div>
       </div>
       <div class="hero-art">
         <img src="assets/img/halk-oyunlari-figur.png" alt="Uluslararası Halk Oyunları Kongresi – International Folk Dances Congress">
-        <div class="stamp"><span><span lang="tr">Katılım</span><span lang="en">No</span><b lang="tr">ÜCRETSİZ</b><b lang="en">FEE</b></span></div>
+
       </div>
     </div>
   </section>
@@ -107,45 +113,20 @@
         <p lang="tr">Halk oyunları, toplumsal ilişkiler, kültürel bellek ve bedensel deneyim aracılığıyla kuşaktan kuşağa aktarılan yaşayan bir kültürel pratiktir. Bu kongre, halk oyunlarını değişmez bir gelenek anlayışı içerisinde değerlendirmek yerine, toplumsal ve kültürel koşullarla ilişkisi içinde ele almayı amaçlamaktadır.</p>
         <p lang="en">Folk dance is a living cultural practice transmitted from generation to generation through social relations, cultural memory, and embodied experience. This congress aims to examine folk dance not as an unchanging tradition, but in relation to the social and cultural conditions that shape it.</p>
         <a class="btn ghost" href="#tema"><span lang="tr">Ana tema ve alt başlıklar</span><span lang="en">Main theme &amp; subheadings</span> →</a>
+        <p class="note" style="margin-top:14px" lang="tr">Alt temaların açıklamaları için başlıklara tıklayın.</p>
+        <p class="note" style="margin-top:14px" lang="en">Click a subtheme to read its description.</p>
       </div>
-      <div class="chips">
-        <a class="chip" href="#tema/alt-1"><b>01</b><span lang="tr">Dönüşen Aktarım ve Eğitim</span><span lang="en">Transformations in Transmission and Education</span></a>
-        <a class="chip" href="#tema/alt-2"><b>02</b><span lang="tr">Yenilikçi Derleme ve Araştırma Yöntemleri</span><span lang="en">Innovative Documentation and Research Methods</span></a>
-        <a class="chip" href="#tema/alt-3"><b>03</b><span lang="tr">Gelişen Dijital Teknolojiler ve Miras</span><span lang="en">Emerging Digital Technologies and Heritage</span></a>
-        <a class="chip" href="#tema/alt-4"><b>04</b><span lang="tr">Çoğalan Sahneler: Ekran ve Temsil</span><span lang="en">Expanding Stages: Screen and Representation</span></a>
-        <a class="chip" href="#tema/alt-5"><b>05</b><span lang="tr">Taşınan Bellekler: Göç ve Kimlik</span><span lang="en">Memories in Motion: Migration and Identity</span></a>
-        <a class="chip" href="#tema/alt-6"><b>06</b><span lang="tr">Kapsayıcı Toplum, Beden ve İyi Oluş</span><span lang="en">Inclusive Society, the Body, and Well-Being</span></a>
-        <a class="chip" href="#tema/alt-7"><b>07</b><span lang="tr">Eleştirel Koruma, Politika ve Etik</span><span lang="en">Critical Preservation, Policy, and Ethics</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="ritim" id="ritim">
-    <div class="wrap">
-      <span class="kicker" style="font:700 .75rem var(--head);letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:6px"><span lang="tr">Anadolu'nun ritmi</span><span lang="en">The rhythm of Anatolia</span></span>
-      <h2 lang="tr">Yöreye dokun, davul çalsın</h2><h2 lang="en">Tap a region, hear the drum</h2>
-      <p class="lead" lang="tr">Haritadaki noktalardan birine dokunun: o yörenin oyununu ve usulünü davul sesiyle dinleyin. Sayfanın başındaki halay ekibi de ritme uyar.</p>
-      <p class="lead" lang="en">Tap one of the points on the map to hear that region's dance and its rhythm on the drum. The dancers at the top of the page follow the beat.</p>
-      <div class="ritim-grid">
-        <div class="map-wrap"><p class="map-hint" lang="tr">● Noktalara dokunun · sesi açmayı unutmayın</p><p class="map-hint" lang="en">● Tap the points · turn your sound on</p></div>
-        <div>
-          <div class="dance-card" id="dance-card" aria-live="polite">
-            <div class="reg"></div>
-            <h3></h3>
-            <div class="usul"><span class="meter"></span><span class="grp"></span></div>
-            <div class="beats"></div>
-            <p></p>
-            <button class="play" id="play" type="button" aria-pressed="false"><span class="ic"></span><span class="t-off"><span lang="tr">Ritmi çal</span><span lang="en">Play the rhythm</span></span><span class="t-on"><span lang="tr">Durdur</span><span lang="en">Stop</span></span></button>
-          </div>
-          <div class="dance-list"></div>
-          <p class="src" lang="tr">Usuller tanıtım amaçlı sadeleştirilmiştir; her yörede pek çok farklı oyun ve usul bulunur.</p>
-          <p class="src" lang="en">Rhythms are simplified for illustration; each region has many different dances and metres.</p>
-        </div>
+      <div class="theme-links" role="list">
+        <a class="tl" role="listitem" href="#tema/alt-1"><b>01</b><span lang="tr">Dönüşen Aktarım ve Eğitim</span><span lang="en">Transformations in Transmission and Education</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="tl" role="listitem" href="#tema/alt-2"><b>02</b><span lang="tr">Yenilikçi Derleme ve Araştırma Yöntemleri</span><span lang="en">Innovative Documentation and Research Methods</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="tl" role="listitem" href="#tema/alt-3"><b>03</b><span lang="tr">Gelişen Dijital Teknolojiler ve Miras</span><span lang="en">Emerging Digital Technologies and Heritage</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="tl" role="listitem" href="#tema/alt-4"><b>04</b><span lang="tr">Çoğalan Sahneler: Ekran ve Temsil</span><span lang="en">Expanding Stages: Screen and Representation</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="tl" role="listitem" href="#tema/alt-5"><b>05</b><span lang="tr">Taşınan Bellekler: Göç ve Kimlik</span><span lang="en">Memories in Motion: Migration and Identity</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="tl" role="listitem" href="#tema/alt-6"><b>06</b><span lang="tr">Kapsayıcı Toplum, Beden ve İyi Oluş</span><span lang="en">Inclusive Society, the Body, and Well-Being</span><span class="arr" aria-hidden="true">→</span></a>
+        <a class="tl" role="listitem" href="#tema/alt-7"><b>07</b><span lang="tr">Eleştirel Koruma, Politika ve Etik</span><span lang="en">Critical Preservation, Policy, and Ethics</span><span class="arr" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
-
-  <div class="ticker" aria-hidden="true"><div class="track"><span>Halay</span><i></i><span>Zeybek</span><i></i><span>Horon</span><i></i><span>Bar</span><i></i><span>Karşılama</span><i></i><span>Teke</span><i></i><span>Kaşık Oyunları</span><i></i><span>Kafkas</span><i></i><span>Hora</span><i></i><span>Lezginka</span><i></i><span>Semah</span><i></i><span>Bengi</span><i></i><span>Misket</span><i></i><span>Çiftetelli</span><i></i><span>Halay</span><i></i><span>Zeybek</span><i></i><span>Horon</span><i></i><span>Bar</span><i></i><span>Karşılama</span><i></i><span>Teke</span><i></i><span>Kaşık Oyunları</span><i></i><span>Kafkas</span><i></i><span>Hora</span><i></i><span>Lezginka</span><i></i><span>Semah</span><i></i><span>Bengi</span><i></i><span>Misket</span><i></i><span>Çiftetelli</span><i></i></div></div>
 
   <section class="block alt">
     <div class="wrap grid g2" style="gap:48px">
@@ -170,28 +151,35 @@
     </div>
   </section>
 
-  <div class="stats">
+    <section class="cta-band" aria-labelledby="cta-h">
     <div class="wrap">
-      <div class="s"><b data-count="5" data-suffix=".">5.</b><span lang="tr">Uluslararası kongre</span><span lang="en">International congress</span></div>
-      <div class="s"><b data-count="82">82</b><span lang="tr">Bilim kurulu üyesi</span><span lang="en">Referee board members</span></div>
-      <div class="s"><b data-count="7">7</b><span lang="tr">Alt tema</span><span lang="en">Subthemes</span></div>
-      <div class="s"><b data-count="3">3</b><span lang="tr">Gün · 10–12 Aralık</span><span lang="en">Days · 10–12 December</span></div>
+      <div>
+        <span class="kicker" lang="tr">Bildiri çağrısı</span><span class="kicker" lang="en">Call for papers</span>
+        <h2 id="cta-h"><span lang="tr">Bildirinizi gönderin</span><span lang="en">Submit your paper</span></h2>
+        <p lang="tr">Özetler Türkçe ve İngilizce olarak, 100–350 kelime ve 3–5 anahtar kelimeyle gönderilir. Bildiri ücreti alınmaz.</p>
+        <p lang="en">Abstracts are submitted in Turkish and English, 100–350 words with 3–5 keywords. No paper fee is charged.</p>
+      </div>
+      <div class="cta-side">
+        <div class="deadline"><small lang="tr">Son tarih</small><small lang="en">Deadline</small><b data-date="2026-11-25"></b><span data-days-left="2026-11-25"></span></div>
+        <div class="btns">
+          <a class="btn tan" href="#bildiri/ozet-formu"><span lang="tr">Bildirini Gönder</span><span lang="en">Submit Your Abstract</span> →</a>
+          <a class="btn ghost-light" href="#bildiri"><span lang="tr">Yazım kuralları</span><span lang="en">Writing rules</span></a>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="kilim-band move"></div>
+  </section>
 
-  <section class="block">
+<section class="block">
     <div class="wrap">
       <div class="section-title"><div><span class="kicker" lang="tr">Geçmişten</span><span class="kicker" lang="en">From the past</span>
         <h2 lang="tr">Önceki Kongreden Kareler</h2><h2 lang="en">Moments from the Previous Congress</h2></div></div>
-      <div class="gallery">
-        <a href="assets/img/galeri/uhok-2025-1.jpg"><img src="assets/img/galeri/uhok-2025-1.jpg" alt="Kongre 2025"></a>
-        <a href="assets/img/galeri/uhok-2025-5.jpg"><img src="assets/img/galeri/uhok-2025-5.jpg" alt="Kongre 2025"></a>
-        <a href="assets/img/galeri/uhok-2025-6.jpg"><img src="assets/img/galeri/uhok-2025-6.jpg" alt="Kongre 2025" style="object-position:center 20%"></a>
-        <a href="assets/img/galeri/uhok-2025-2.jpg"><img src="assets/img/galeri/uhok-2025-2.jpg" alt="Kongre 2025" style="object-position:center 35%"></a>
-        <a href="assets/img/galeri/uhok-2025-3.jpg"><img src="assets/img/galeri/uhok-2025-3.jpg" alt="Kongre 2025" style="object-position:center 35%"></a>
-        <a href="assets/img/galeri/uhok-2025-4.jpg"><img src="assets/img/galeri/uhok-2025-4.jpg" alt="Kongre 2025" style="object-position:center 35%"></a>
+      <div class="gallery-strip">
+        <a href="#galeri"><img src="assets/img/galeri/uhok-2025-1.jpg" alt="Önceki kongre – açılış"></a>
+        <a href="#galeri"><img src="assets/img/galeri/uhok-2025-2.jpg" alt="Önceki kongre – belge töreni" style="object-position:center 30%"></a>
+        <a href="#galeri"><img src="assets/img/galeri/uhok-2025-5.jpg" alt="Önceki kongre – katılımcılar"></a>
+        <a href="#galeri" class="hide-m"><img src="assets/img/galeri/uhok-2025-4.jpg" alt="Önceki kongre – katılımcılar" style="object-position:center 30%"></a>
       </div>
+      <p style="margin:18px 0 0"><a class="btn ghost" href="#galeri"><span lang="tr">Önceki kongreyi incele</span><span lang="en">Explore the previous congress</span> →</a></p>
     </div>
   </section>
 
@@ -650,6 +638,25 @@
   </div></section>
 </div>
 
+<!-- =================== GALERİ =================== -->
+<div class="page" id="p-galeri">
+  <header class="page-head"><div class="wrap">
+    <span class="kicker" lang="tr">Geçmişten</span><span class="kicker" lang="en">From the past</span>
+    <h1 lang="tr">Önceki Kongreden Kareler</h1><h1 lang="en">Moments from the Previous Congress</h1>
+    <p lang="tr">Fotoğrafları büyütmek için üzerine tıklayın.</p><p lang="en">Click a photo to enlarge it.</p>
+  </div></header>
+  <section class="block"><div class="wrap">
+      <div class="gallery">
+        <a href="assets/img/galeri/uhok-2025-1.jpg"><img src="assets/img/galeri/uhok-2025-1.jpg" alt="Kongre 2025"></a>
+        <a href="assets/img/galeri/uhok-2025-5.jpg"><img src="assets/img/galeri/uhok-2025-5.jpg" alt="Kongre 2025"></a>
+        <a href="assets/img/galeri/uhok-2025-6.jpg"><img src="assets/img/galeri/uhok-2025-6.jpg" alt="Kongre 2025" style="object-position:center 20%"></a>
+        <a href="assets/img/galeri/uhok-2025-2.jpg"><img src="assets/img/galeri/uhok-2025-2.jpg" alt="Kongre 2025" style="object-position:center 35%"></a>
+        <a href="assets/img/galeri/uhok-2025-3.jpg"><img src="assets/img/galeri/uhok-2025-3.jpg" alt="Kongre 2025" style="object-position:center 35%"></a>
+        <a href="assets/img/galeri/uhok-2025-4.jpg"><img src="assets/img/galeri/uhok-2025-4.jpg" alt="Kongre 2025" style="object-position:center 35%"></a>
+      </div>
+  </div></section>
+</div>
+
 <!-- =================== İLETİŞİM =================== -->
 <div class="page" id="p-iletisim">
   <header class="page-head"><div class="wrap">
@@ -660,13 +667,15 @@
     <div>
       <h3 lang="tr">İletişim kurulacak kişilerin telefonları</h3><h3 lang="en">Phones of contact persons</h3>
       <div class="people" style="grid-template-columns:1fr;margin-bottom:20px">
-        <div class="person"><div class="av">GK</div><div><b>Gül KAPLAN EKEMEN</b><span><a href="tel:+905353018444">+90 535 301 84 44</a></span></div></div>
-        <div class="person"><div class="av">SÖ</div><div><b>Semih ÖZBİLGİ</b><span><a href="tel:+905556884203">+90 555 688 42 03</a></span></div></div>
+        <div class="person"><div class="av">GK</div><div><b>Arş. Gör. Dr. Gül KAPLAN EKEMEN</b><span><span lang="tr">Bilimsel Sekreterya</span><span lang="en">Scientific Secretariat</span> · <a href="tel:+905353018444">+90 535 301 84 44</a></span></div></div>
+        <div class="person"><div class="av">SÖ</div><div><b>Arş. Gör. Semih ÖZBİLGİ</b><span><span lang="tr">Bilimsel Sekreterya</span><span lang="en">Scientific Secretariat</span> · <a href="tel:+905556884203">+90 555 688 42 03</a></span></div></div>
       </div>
       <div class="card">
         <p><b>E-mail:</b> <a data-email></a></p>
-        <p style="margin:0"><b>Web:</b> <a data-site></a></p>
+        <p><b>Web:</b> <a data-site></a></p>
+        <p style="margin:0"><b lang="tr">Kongre yeri:</b><b lang="en">Venue:</b> <span lang="tr">Sakarya Üniversitesi Turgut Özal Kültür ve Kongre Merkezi</span><span lang="en">Sakarya University Turgut Özal Culture and Congress Center</span></p>
       </div>
+      <p style="margin-top:18px"><a class="btn primary" href="#bildiri/ozet-formu"><span lang="tr">Bildiri Gönderimi</span><span lang="en">Submit an Abstract</span> →</a></p>
     </div>
     <iframe class="map" loading="lazy" title="Harita / Map" src="https://www.google.com/maps?q=Sakarya+%C3%9Cniversitesi+Turgut+%C3%96zal+K%C3%BClt%C3%BCr+ve+Kongre+Merkezi&output=embed"></iframe>
   </div></section>
@@ -676,6 +685,11 @@
 
 <footer class="site">
   <div class="wrap">
+    <div class="foot-cta">
+      <div><b lang="tr">Bildiri özetleri için son tarih: <span data-date="2026-11-25"></span></b><b lang="en">Abstract deadline: <span data-date="2026-11-25"></span></b>
+        <span lang="tr">Özetinizi Türkçe ve İngilizce olarak gönderin.</span><span lang="en">Send your abstract in Turkish and English.</span></div>
+      <a class="btn tan" href="#bildiri/ozet-formu"><span lang="tr">Bildiri Gönderimi</span><span lang="en">Submit an Abstract</span> →</a>
+    </div>
     <div class="cols">
       <div>
         <div class="flogos">
@@ -689,9 +703,9 @@
         <h4 lang="tr">Sayfalar</h4><h4 lang="en">Pages</h4>
         <ul>
           <li><a href="#kongre"><span lang="tr">Kongre</span><span lang="en">Congress</span></a></li>
-          <li><a href="#tema"><span lang="tr">Tema</span><span lang="en">Theme</span></a></li>
-          <li><a href="#tarihler"><span lang="tr">Tarihler</span><span lang="en">Dates</span></a></li>
           <li><a href="#kurullar"><span lang="tr">Kurullar</span><span lang="en">Committees</span></a></li>
+          <li><a href="#tarihler"><span lang="tr">Önemli Tarihler</span><span lang="en">Dates</span></a></li>
+          <li><a href="#tema"><span lang="tr">Temalar</span><span lang="en">Themes</span></a></li>
           <li><a href="#bildiri"><span lang="tr">Bildiri</span><span lang="en">Papers</span></a></li>
           <li><a href="#kayit"><span lang="tr">Kayıt</span><span lang="en">Registration</span></a></li>
           <li><a href="#program">Program</a></li>
@@ -700,7 +714,12 @@
       </div>
       <div>
         <h4 lang="tr">İletişim</h4><h4 lang="en">Contact</h4>
-        <p>✉ <a data-email></a><br>🌐 <a data-site></a><br>☎ <a href="tel:+905353018444">+90 535 301 84 44</a><br>☎ <a href="tel:+905556884203">+90 555 688 42 03</a></p>
+        <ul class="contacts">
+          <li><span>Gül KAPLAN EKEMEN</span><a href="tel:+905353018444">+90 535 301 84 44</a></li>
+          <li><span>Semih ÖZBİLGİ</span><a href="tel:+905556884203">+90 555 688 42 03</a></li>
+          <li><span>E-mail</span><a data-email></a></li>
+          <li><span>Web</span><a data-site></a></li>
+        </ul>
       </div>
     </div>
     <div class="copy">
@@ -713,6 +732,5 @@
 <div class="lightbox"><img alt=""></div>
 <button class="to-top" aria-label="Yukarı">↑</button>
 <script src="assets/js/main.js"></script>
-<script src="assets/js/show.js"></script>
 </body>
 </html>

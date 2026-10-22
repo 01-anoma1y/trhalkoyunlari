@@ -155,8 +155,22 @@ function setLang(l) {
     o.textContent = parts.length === 2 ? (l === 'tr' ? parts[0] : parts[0].match(/^\d+\. /) ? parts[0].match(/^\d+\. /)[0] + parts[1] : parts[1]) : o.dataset.both;
   });
   renderTimeline();
+  renderDates();
   updateCountdown();
   $$('textarea[data-words]').forEach(ta => ta.dispatchEvent(new Event('input')));
+}
+
+/* Sayfadaki tarih metinleri — yalnızca ISO tarih girilir, gün adı ve biçim otomatik üretilir */
+function renderDates() {
+  $$('[data-date]').forEach(el => { el.textContent = fmtDate(el.dataset.date).main + ' ' + el.dataset.date.slice(0, 4); });
+  $$('[data-weekrange]').forEach(el => { const [a, b] = el.dataset.weekrange.split(','); el.textContent = fmtDate(a).day + ' – ' + fmtDate(b).day; });
+  $$('[data-days-left]').forEach(el => {
+    const [y, m, d] = el.dataset.daysLeft.split('-').map(Number), t = new Date();
+    const n = Math.round((Date.UTC(y, m - 1, d) - Date.UTC(t.getFullYear(), t.getMonth(), t.getDate())) / 864e5); // takvim günü farkı
+    el.textContent = n > 0 ? (lang() === 'tr' ? `${n} gün kaldı` : `${n} days left`)
+      : n === 0 ? (lang() === 'tr' ? 'Bugün son gün' : 'Last day today')
+      : (lang() === 'tr' ? 'Süre doldu' : 'Closed');
+  });
 }
 
 /* Sekmeler (hash ile) */
@@ -164,10 +178,16 @@ function route() {
   const id = (location.hash || '#anasayfa').slice(1).split('/')[0];
   const page = $('#p-' + id) || $('#p-anasayfa');
   $$('.page').forEach(p => p.classList.toggle('show', p === page));
-  $$('nav.main a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + page.id.slice(2)));
+  const pid = page.id.slice(2);
+  $$('nav.main a').forEach(a => a.classList.toggle('active',
+    a.getAttribute('href') === '#' + pid || (a.dataset.group || '').split(' ').includes(pid)));
   $('nav.main').classList.remove('open');
   const sub = location.hash.split('/')[1];
-  if (sub && $('#' + sub)) setTimeout(() => $('#' + sub).scrollIntoView({ behavior: 'smooth' }), 60);
+  if (sub && $('#' + sub)) setTimeout(() => {
+    const t = $('#' + sub);
+    t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    t.classList.remove('flash'); void t.offsetWidth; t.classList.add('flash'); // gidilen alt temayı vurgula
+  }, 60);
   else window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
 }
 
@@ -181,15 +201,7 @@ function updateCountdown() {
         m = Math.max(0, Math.floor(diff / 6e4) % 60),
         s = Math.max(0, Math.floor(diff / 1e3) % 60);
   const L = lang() === 'tr' ? ['Gün', 'Saat', 'Dakika', 'Saniye'] : ['Days', 'Hours', 'Minutes', 'Seconds'];
-  const vals = [d, h, m, s].map(v => String(v).padStart(2, '0'));
-  box.forEach(b => {
-    if (b.children.length !== 4) b.innerHTML = vals.map((v, i) => `<div><b>${v}</b><span>${L[i]}</span></div>`).join('');
-    [...b.children].forEach((c, i) => {
-      const n = c.querySelector('b'), sp = c.querySelector('span');
-      if (sp.textContent !== L[i]) sp.textContent = L[i];
-      if (n.textContent !== vals[i]) { n.textContent = vals[i]; n.classList.remove('tick'); void n.offsetWidth; n.classList.add('tick'); }
-    });
-  });
+  box.forEach(b => b.innerHTML = [d, h, m, s].map((v, i) => `<div><b>${String(v).padStart(2, '0')}</b><span>${L[i]}</span></div>`).join(''));
 }
 
 /* Zaman çizelgesi */
@@ -201,7 +213,7 @@ function fmtDate(iso) {
   const days = lang() === 'tr'
     ? ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi']
     : ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  return { main: `${d.getDate()} ${months[d.getMonth()]}`, sub: `${days[d.getDay()]} · ${iso.split('-').reverse().join('.')}` };
+  return { main: `${d.getDate()} ${months[d.getMonth()]}`, day: days[d.getDay()], sub: `${days[d.getDay()]} · ${iso.split('-').reverse().join('.')}` };
 }
 function renderTimeline() {
   const today = new Date(); today.setHours(0, 0, 0, 0);
@@ -365,7 +377,7 @@ function initReveal() {
 }
 function markReveal() {
   if (!revealObs) return;
-  $$('.page.show .section-title, .page.show .card, .page.show .person, .page.show .timeline li, .page.show .gallery a, .page.show details.acc, .page.show .callout, .page.show .chip, .page.show .prose')
+  $$('.page.show .section-title, .page.show .card, .page.show .person, .page.show .timeline li, .page.show .gallery a, .page.show details.acc, .page.show .callout, .page.show .tl, .page.show .gallery-strip a, .page.show .prose')
     .forEach((el, i) => {
       if (el.classList.contains('reveal')) return;
       const r = el.getBoundingClientRect();
