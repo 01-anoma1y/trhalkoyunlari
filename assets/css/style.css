@@ -682,3 +682,9 @@ footer.site .flogos .f-thof{height:64px;background:none;border-radius:0;padding:
   .partners .p-sau,.partners img:first-child{width:auto;min-width:0;flex:0 1 auto;height:auto;max-width:calc(100% - 82px)}
   .partners .p-thof{flex:0 0 auto;height:66px}
 }
+/* Mobil footer logoları: biraz daha büyük, yan yana */
+@media (max-width:700px){
+  footer.site .flogos{display:flex;flex-wrap:nowrap;gap:18px;width:100%}
+  footer.site .flogos .f-sau{width:auto;height:auto;min-width:0;flex:0 1 auto;max-width:min(300px,calc(100% - 84px))}
+  footer.site .flogos .f-thof{flex:0 0 auto;height:66px}
+}
