@@ -238,7 +238,7 @@ form.f{display:grid;gap:14px}
 
 /* Paydaşlar */
 .partners{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap}
-.partners img{height:84px;width:auto;filter:grayscale(.1)}
+.partners img{height:84px;width:auto}
 .partners .ph{height:84px;min-width:160px;border:2px dashed var(--line);border-radius:14px;display:grid;place-items:center;color:var(--ink-soft);font:600 .8rem var(--head);padding:0 16px;text-align:center}
 
 /* Tablo */
@@ -343,7 +343,7 @@ footer.site .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;pad
   .sub-theme .n{transition:color .3s ease}
   .card:hover .icon{transform:rotate(-6deg) scale(1.06)}
   .icon{transition:transform .3s ease}
-  .partners img{filter:grayscale(.6);opacity:.85}
+  .partners img{filter:none;opacity:1}
   .partners img:hover{filter:none;opacity:1;transform:scale(1.04)}
   .hotel .links a:hover{background:var(--tan);color:#fff}
   .hero-art .stamp > span{display:inline-block;transition:transform .3s ease}
