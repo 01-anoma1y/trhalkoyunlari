@@ -632,3 +632,8 @@ picture{display:contents}
   .grid.g2 .grid.g2 .card h3{font-size:.9rem}
   .gallery-strip{margin:0 -16px;padding:0 16px 6px}
 }
+/* Mobil hero görseli: biraz daha büyük, daha az boşluk */
+@media (max-width:700px){
+  .hero .wrap{gap:12px;padding-bottom:16px}
+  .hero-art img{max-width:min(280px,78vw)}
+}
