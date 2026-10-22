@@ -81,7 +81,7 @@ section.block.alt{background:#fff;border-block:1px solid var(--line)}
 .hero .logos{display:flex;gap:16px;align-items:center;margin-bottom:22px;flex-wrap:wrap}
 .hero .logos img{height:52px;width:auto;max-width:100%}
 .hero .logos img.thof{height:50px}
-@media (max-width:560px){.hero .logos img{height:38px}.hero .logos img.thof{height:38px}.hero .logos .sep{display:none}}
+@media (max-width:560px){.hero .logos{gap:10px}.hero .logos img{height:36px}.hero .logos img.thof{height:44px}.hero .logos .sep{display:none}}
 .hero .logos .sep{width:1px;height:48px;background:var(--ink-soft);opacity:.4}
 .hero .uhok{font:500 clamp(1.6rem,3.2vw,2.4rem) var(--head);letter-spacing:.12em;margin:0 0 6px}
 .hero .orgs{font:600 .72rem var(--head);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:24px}
@@ -123,6 +123,9 @@ section.block.alt{background:#fff;border-block:1px solid var(--line)}
 
 /* Kartlar */
 .grid{display:grid;gap:20px}
+.grid > *{min-width:0}
+.split{grid-template-columns:1.3fr 1fr}
+@media (max-width:900px){.split{grid-template-columns:1fr}}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
 .g4{grid-template-columns:repeat(4,1fr)}
@@ -252,8 +255,10 @@ footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
 footer.site h4{color:#fff;font-size:.95rem;letter-spacing:.06em;text-transform:uppercase}
 footer.site a{color:#fff;text-decoration:none}
 footer.site a:hover{text-decoration:underline}
-footer.site .flogos{display:flex;gap:14px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;width:max-content;max-width:100%;margin-bottom:16px}
-footer.site .flogos img{height:48px;width:auto}
+footer.site .cols > *{min-width:0}
+footer.site .flogos{display:inline-flex;gap:14px;align-items:center;background:#fff;border-radius:14px;padding:12px 16px;max-width:100%;margin-bottom:16px}
+footer.site .flogos img{height:48px;width:auto;min-width:0;max-width:100%;object-fit:contain}
+@media (max-width:560px){footer.site .flogos img{height:34px}}
 footer.site ul{list-style:none;padding:0;margin:0;columns:2}
 footer.site li{margin-bottom:6px}
 footer.site .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;padding-top:16px;font-size:.85rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
@@ -263,3 +268,28 @@ footer.site .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:32px;pad
 .to-top.on{opacity:1;pointer-events:auto}
 
 @media print{header.site,.topbar,footer.site,.to-top{display:none}.page{display:block !important}}
+
+/* ---------- Mobil düzeltmeler ---------- */
+@media (max-width:700px){
+  body{font-size:16px}
+  .prose p,.prose{text-align:left}
+  .page-head{padding:40px 0 32px}
+  .page-head::after{width:180px;height:110px;right:-30px;bottom:-20px;opacity:.1}
+  section.block{padding:40px 0}
+  .hero .wrap{padding:28px 0 40px;gap:16px}
+  .hero-art img{max-width:340px}
+  .hero-art .stamp{left:auto;right:0;top:-4px;bottom:auto;width:76px;height:76px;font-size:.6rem}
+  .hero-art .stamp b{font-size:.95rem}
+  .hero .meta{gap:14px}
+  .countdown div{min-width:0;flex:1}
+  .g4,.grid.g2 .grid.g2{grid-template-columns:1fr 1fr;gap:12px}
+  .g4 .card,.grid.g2 .grid.g2 .card{padding:16px}
+  .g4 .card h3,.grid.g2 .grid.g2 .card h3{font-size:.95rem;margin:0}
+  .icon{width:40px;height:40px;font-size:1.2rem;margin-bottom:10px}
+  .card{padding:20px}
+  .strip .it{padding:16px 14px}
+  .partners{gap:24px}.partners img{height:60px}
+  .theme-quote{padding-left:16px}
+  .timeline .c{padding:10px 14px}
+  .section-title{margin-bottom:18px}
+}

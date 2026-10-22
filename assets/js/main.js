@@ -148,8 +148,15 @@ function setLang(l) {
   document.title = l === 'tr'
     ? '5. Uluslararası Halk Oyunları Kongresi | UHOK 2026'
     : '5th International Folk Dance Congress | IFDC 2026';
+  // Açılır listeler: "Türkçe / English" metninden dile göre tek dil göster, gönderilen değer iki dilli kalsın
+  $$('select option').forEach(o => {
+    if (!o.dataset.both) { o.dataset.both = o.textContent; o.value = o.textContent; }
+    const parts = o.dataset.both.split(' / ');
+    o.textContent = parts.length === 2 ? (l === 'tr' ? parts[0] : parts[0].match(/^\d+\. /) ? parts[0].match(/^\d+\. /)[0] + parts[1] : parts[1]) : o.dataset.both;
+  });
   renderTimeline();
   updateCountdown();
+  $$('textarea[data-words]').forEach(ta => ta.dispatchEvent(new Event('input')));
 }
 
 /* Sekmeler (hash ile) */
@@ -247,6 +254,7 @@ function renderPeople() {
 const words = t => (t.trim().match(/\S+/g) || []).length;
 function wireCounters() {
   $$('textarea[data-words]').forEach(ta => {
+    if (ta.dataset.wired) return; ta.dataset.wired = '1';
     const c = ta.nextElementSibling;
     const upd = () => {
       const n = words(ta.value);
@@ -316,14 +324,15 @@ function wireGallery() {
 document.addEventListener('DOMContentLoaded', () => {
   applyConfig();
   renderPeople();
+  wireCounters();
   let l = new URLSearchParams(location.search).get('lang');
   if (!l) { try { l = localStorage.getItem('uhok-lang'); } catch (e) {} }
   if (!l) l = 'tr';
   setLang(l === 'en' ? 'en' : 'tr');
-  $$('.lang button').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.l); wireCounters(); }));
+  $$('.lang button').forEach(b => b.addEventListener('click', () => setLang(b.dataset.l)));
   $('.burger').addEventListener('click', () => $('nav.main').classList.toggle('open'));
   $$('[data-ics]').forEach(b => b.addEventListener('click', downloadICS));
-  wireCounters(); wireForms(); wireGallery();
+  wireForms(); wireGallery();
   route(); window.addEventListener('hashchange', route);
   updateCountdown(); setInterval(updateCountdown, 1000);
   const tt = $('.to-top');
