@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sayfa bulunamadı | UHOK 2026</title>
 <meta name="robots" content="noindex">
-<link rel="icon" type="image/png" href="/trhalkoyunlari/assets/img/favicon-64.png">
+<link rel="icon" type="image/png" href="/assets/img/favicon-64.png" id="fav">
 <style>
   body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:'Segoe UI',system-ui,sans-serif;color:#1c2541;background:#f7f8fb;padding:24px;box-sizing:border-box;text-align:center}
   main{max-width:520px}
@@ -22,7 +22,13 @@
   <h1>Aradığınız sayfa bulunamadı</h1>
   <p>5. Uluslararası Halk Oyunları Kongresi sitesinde bu adreste bir sayfa yok.</p>
   <p lang="en">The page you are looking for could not be found.</p>
-  <a href="/trhalkoyunlari/">Ana sayfaya dön / Back to home</a>
+  <a href="/" id="home">Ana sayfaya dön / Back to home</a>
 </main>
+<script>
+  // GitHub Pages alt klasörde (/trhalkoyunlari/), Vercel kök dizinde çalışır
+  var base = location.pathname.indexOf("/trhalkoyunlari/") === 0 ? "/trhalkoyunlari/" : "/";
+  document.getElementById("home").href = base;
+  document.getElementById("fav").href = base + "assets/img/favicon-64.png";
+</script>
 </body>
 </html>
