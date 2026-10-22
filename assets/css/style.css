@@ -665,3 +665,12 @@ picture{display:contents}
   .partners .p-sau,.partners img:first-child{height:auto;width:min(270px,78vw);max-width:none}
   .partners .p-thof{height:84px;width:auto}
 }
+
+/* Footer logoları: beyaz Sakarya logosu, koyu zeminde */
+footer.site .flogos{background:none;padding:0;border-radius:0;gap:22px}
+footer.site .flogos .f-sau{height:46px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.35))}
+footer.site .flogos .f-thof{height:58px;background:#fff;border-radius:50%;padding:5px;box-sizing:content-box}
+@media (max-width:700px){
+  footer.site .flogos .f-sau{height:auto;width:min(230px,62vw)}
+  footer.site .flogos .f-thof{height:46px}
+}
