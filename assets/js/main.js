@@ -181,7 +181,15 @@ function updateCountdown() {
         m = Math.max(0, Math.floor(diff / 6e4) % 60),
         s = Math.max(0, Math.floor(diff / 1e3) % 60);
   const L = lang() === 'tr' ? ['Gün', 'Saat', 'Dakika', 'Saniye'] : ['Days', 'Hours', 'Minutes', 'Seconds'];
-  box.forEach(b => b.innerHTML = [d, h, m, s].map((v, i) => `<div><b>${String(v).padStart(2, '0')}</b><span>${L[i]}</span></div>`).join(''));
+  const vals = [d, h, m, s].map(v => String(v).padStart(2, '0'));
+  box.forEach(b => {
+    if (b.children.length !== 4) b.innerHTML = vals.map((v, i) => `<div><b>${v}</b><span>${L[i]}</span></div>`).join('');
+    [...b.children].forEach((c, i) => {
+      const n = c.querySelector('b'), sp = c.querySelector('span');
+      if (sp.textContent !== L[i]) sp.textContent = L[i];
+      if (n.textContent !== vals[i]) { n.textContent = vals[i]; n.classList.remove('tick'); void n.offsetWidth; n.classList.add('tick'); }
+    });
+  });
 }
 
 /* Zaman çizelgesi */

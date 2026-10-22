@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/show.css">
 </head>
 <body>
 
@@ -57,6 +58,8 @@
 <!-- =================== ANA SAYFA =================== -->
 <div class="page" id="p-anasayfa">
   <section class="hero">
+    <div class="hero-marquee" aria-hidden="true"><div class="track"><div>HALAY · ZEYBEK · HORON · BAR · KARŞILAMA · TEKE · KAŞIK · KAFKAS ·&nbsp;</div><div>HALAY · ZEYBEK · HORON · BAR · KARŞILAMA · TEKE · KAŞIK · KAFKAS ·&nbsp;</div></div></div>
+    <div class="halay" aria-hidden="true"></div>
     <div class="wrap">
       <div>
         <div class="logos">
@@ -117,6 +120,33 @@
     </div>
   </section>
 
+  <section class="ritim" id="ritim">
+    <div class="wrap">
+      <span class="kicker" style="font:700 .75rem var(--head);letter-spacing:.18em;text-transform:uppercase;display:block;margin-bottom:6px"><span lang="tr">Anadolu'nun ritmi</span><span lang="en">The rhythm of Anatolia</span></span>
+      <h2 lang="tr">Yöreye dokun, davul çalsın</h2><h2 lang="en">Tap a region, hear the drum</h2>
+      <p class="lead" lang="tr">Haritadaki noktalardan birine dokunun: o yörenin oyununu ve usulünü davul sesiyle dinleyin. Sayfanın başındaki halay ekibi de ritme uyar.</p>
+      <p class="lead" lang="en">Tap one of the points on the map to hear that region's dance and its rhythm on the drum. The dancers at the top of the page follow the beat.</p>
+      <div class="ritim-grid">
+        <div class="map-wrap"><p class="map-hint" lang="tr">● Noktalara dokunun · sesi açmayı unutmayın</p><p class="map-hint" lang="en">● Tap the points · turn your sound on</p></div>
+        <div>
+          <div class="dance-card" id="dance-card" aria-live="polite">
+            <div class="reg"></div>
+            <h3></h3>
+            <div class="usul"><span class="meter"></span><span class="grp"></span></div>
+            <div class="beats"></div>
+            <p></p>
+            <button class="play" id="play" type="button" aria-pressed="false"><span class="ic"></span><span class="t-off"><span lang="tr">Ritmi çal</span><span lang="en">Play the rhythm</span></span><span class="t-on"><span lang="tr">Durdur</span><span lang="en">Stop</span></span></button>
+          </div>
+          <div class="dance-list"></div>
+          <p class="src" lang="tr">Usuller tanıtım amaçlı sadeleştirilmiştir; her yörede pek çok farklı oyun ve usul bulunur.</p>
+          <p class="src" lang="en">Rhythms are simplified for illustration; each region has many different dances and metres.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true"><div class="track"><span>Halay</span><i></i><span>Zeybek</span><i></i><span>Horon</span><i></i><span>Bar</span><i></i><span>Karşılama</span><i></i><span>Teke</span><i></i><span>Kaşık Oyunları</span><i></i><span>Kafkas</span><i></i><span>Hora</span><i></i><span>Lezginka</span><i></i><span>Semah</span><i></i><span>Bengi</span><i></i><span>Misket</span><i></i><span>Çiftetelli</span><i></i><span>Halay</span><i></i><span>Zeybek</span><i></i><span>Horon</span><i></i><span>Bar</span><i></i><span>Karşılama</span><i></i><span>Teke</span><i></i><span>Kaşık Oyunları</span><i></i><span>Kafkas</span><i></i><span>Hora</span><i></i><span>Lezginka</span><i></i><span>Semah</span><i></i><span>Bengi</span><i></i><span>Misket</span><i></i><span>Çiftetelli</span><i></i></div></div>
+
   <section class="block alt">
     <div class="wrap grid g2" style="gap:48px">
       <div>
@@ -139,6 +169,16 @@
       </div>
     </div>
   </section>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="s"><b data-count="5" data-suffix=".">5.</b><span lang="tr">Uluslararası kongre</span><span lang="en">International congress</span></div>
+      <div class="s"><b data-count="82">82</b><span lang="tr">Bilim kurulu üyesi</span><span lang="en">Referee board members</span></div>
+      <div class="s"><b data-count="7">7</b><span lang="tr">Alt tema</span><span lang="en">Subthemes</span></div>
+      <div class="s"><b data-count="3">3</b><span lang="tr">Gün · 10–12 Aralık</span><span lang="en">Days · 10–12 December</span></div>
+    </div>
+  </div>
+  <div class="kilim-band move"></div>
 
   <section class="block">
     <div class="wrap">
@@ -673,5 +713,6 @@
 <div class="lightbox"><img alt=""></div>
 <button class="to-top" aria-label="Yukarı">↑</button>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/show.js"></script>
 </body>
 </html>
