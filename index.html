@@ -173,12 +173,15 @@
     <div class="wrap">
       <div class="section-title"><div><span class="kicker" lang="tr">Geçmişten</span><span class="kicker" lang="en">From the past</span>
         <h2 lang="tr">Önceki Kongreden Kareler</h2><h2 lang="en">Moments from the Previous Congress</h2></div></div>
-      <div class="gallery-strip">
-        <a href="#galeri"><img src="assets/img/galeri/uhok-2025-1.jpg" alt="Önceki kongre – açılış"></a>
-        <a href="#galeri"><img src="assets/img/galeri/uhok-2025-2.jpg" alt="Önceki kongre – belge töreni" style="object-position:center 30%"></a>
-        <a href="#galeri"><img src="assets/img/galeri/uhok-2025-5.jpg" alt="Önceki kongre – katılımcılar"></a>
-        <a href="#galeri" class="hide-m"><img src="assets/img/galeri/uhok-2025-4.jpg" alt="Önceki kongre – katılımcılar" style="object-position:center 30%"></a>
+      <div class="gallery-strip" role="list" aria-label="Önceki kongreden fotoğraflar">
+        <a href="#galeri" role="listitem"><img src="assets/img/galeri/uhok-2025-1.jpg" alt="Önceki kongre – açılış"></a>
+        <a href="#galeri" role="listitem"><img src="assets/img/galeri/uhok-2025-2.jpg" alt="Önceki kongre – belge töreni" style="object-position:center 30%"></a>
+        <a href="#galeri" role="listitem"><img src="assets/img/galeri/uhok-2025-5.jpg" alt="Önceki kongre – katılımcılar"></a>
+        <a href="#galeri" role="listitem"><img src="assets/img/galeri/uhok-2025-4.jpg" alt="Önceki kongre – katılımcılar" style="object-position:center 30%"></a>
+        <a href="#galeri" role="listitem" class="only-m"><img src="assets/img/galeri/uhok-2025-3.jpg" alt="Önceki kongre – belge töreni" style="object-position:center 30%"></a>
+        <a href="#galeri" role="listitem" class="only-m"><img src="assets/img/galeri/uhok-2025-6.jpg" alt="Önceki kongre – konuklar" style="object-position:center 25%"></a>
       </div>
+      <p class="swipe-hint" aria-hidden="true"><span lang="tr">Kaydırarak gezinin</span><span lang="en">Swipe to browse</span> →</p>
       <p style="margin:18px 0 0"><a class="btn ghost" href="#galeri"><span lang="tr">Önceki kongreyi incele</span><span lang="en">Explore the previous congress</span> →</a></p>
     </div>
   </section>
@@ -691,36 +694,43 @@
       <a class="btn tan" href="#bildiri/ozet-formu"><span lang="tr">Bildiri Gönderimi</span><span lang="en">Submit an Abstract</span> →</a>
     </div>
     <div class="cols">
-      <div>
+      <div class="fbrand">
         <div class="flogos">
           <img src="assets/logos/sakarya-universitesi.png" alt="Sakarya Üniversitesi">
           <img src="assets/logos/thof-amblem.png" alt="THOF">
         </div>
-        <p lang="tr"><b>5. Uluslararası Halk Oyunları Kongresi (UHOK)</b><br>10–12 Aralık 2026 · Sakarya Üniversitesi Turgut Özal Kültür ve Kongre Merkezi</p>
-        <p lang="en"><b>5th International Folk Dance Congress (IFDC)</b><br>10–12 December 2026 · Sakarya University Turgut Özal Culture and Congress Center</p>
+        <p lang="tr"><b>5. Uluslararası Halk Oyunları Kongresi</b><br>10–12 Aralık 2026 · Sakarya Üniversitesi Turgut Özal Kültür ve Kongre Merkezi</p>
+        <p lang="en"><b>5th International Folk Dance Congress</b><br>10–12 December 2026 · Sakarya University Turgut Özal Culture and Congress Center</p>
       </div>
-      <div>
-        <h4 lang="tr">Sayfalar</h4><h4 lang="en">Pages</h4>
+      <details class="fcol" open>
+        <summary><h4 lang="tr">Sayfalar</h4><h4 lang="en">Pages</h4></summary>
         <ul>
-          <li><a href="#kongre"><span lang="tr">Kongre</span><span lang="en">Congress</span></a></li>
+          <li><a href="#kongre"><span lang="tr">Kongre Hakkında</span><span lang="en">About</span></a></li>
           <li><a href="#kurullar"><span lang="tr">Kurullar</span><span lang="en">Committees</span></a></li>
-          <li><a href="#tarihler"><span lang="tr">Önemli Tarihler</span><span lang="en">Dates</span></a></li>
+          <li><a href="#tarihler"><span lang="tr">Önemli Tarihler</span><span lang="en">Important Dates</span></a></li>
           <li><a href="#tema"><span lang="tr">Temalar</span><span lang="en">Themes</span></a></li>
-          <li><a href="#bildiri"><span lang="tr">Bildiri</span><span lang="en">Papers</span></a></li>
-          <li><a href="#kayit"><span lang="tr">Kayıt</span><span lang="en">Registration</span></a></li>
           <li><a href="#program">Program</a></li>
-          <li><a href="#konaklama"><span lang="tr">Konaklama</span><span lang="en">Hotels</span></a></li>
+          <li><a href="#konaklama"><span lang="tr">Konaklama</span><span lang="en">Accommodation</span></a></li>
         </ul>
-      </div>
-      <div>
-        <h4 lang="tr">İletişim</h4><h4 lang="en">Contact</h4>
+      </details>
+      <details class="fcol" open>
+        <summary><h4 lang="tr">Bildiri</h4><h4 lang="en">Papers</h4></summary>
+        <ul>
+          <li><a href="#bildiri"><span lang="tr">Bildiri Gönderimi</span><span lang="en">Submission</span></a></li>
+          <li><a href="#bildiri/ozet-formu"><span lang="tr">Özet Gönderim Formu</span><span lang="en">Abstract Form</span></a></li>
+          <li><a href="#kayit"><span lang="tr">Kayıt</span><span lang="en">Registration</span></a></li>
+          <li><a href="#galeri"><span lang="tr">Önceki Kongre</span><span lang="en">Previous Congress</span></a></li>
+        </ul>
+      </details>
+      <details class="fcol" open>
+        <summary><h4 lang="tr">İletişim</h4><h4 lang="en">Contact</h4></summary>
         <ul class="contacts">
           <li><span>Gül KAPLAN EKEMEN</span><a href="tel:+905353018444">+90 535 301 84 44</a></li>
           <li><span>Semih ÖZBİLGİ</span><a href="tel:+905556884203">+90 555 688 42 03</a></li>
           <li><span>E-mail</span><a data-email></a></li>
           <li><span>Web</span><a data-site></a></li>
         </ul>
-      </div>
+      </details>
     </div>
     <div class="copy">
       <span>© <span id="year">2026</span> <span lang="tr">Sakarya Üniversitesi &amp; Türkiye Halk Oyunları Federasyonu</span><span lang="en">Sakarya University &amp; Turkish Folk Dances Federation</span></span>

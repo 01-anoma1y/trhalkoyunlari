@@ -441,3 +441,105 @@ footer.site .contacts li{display:flex;flex-direction:column;margin-bottom:10px}
 footer.site .contacts li span{font-size:.78rem;color:#9aa5c8;letter-spacing:.04em}
 nav.main a.m-cta{display:none}
 @media (max-width:1240px){nav.main a.m-cta{display:inline-flex;justify-content:center;color:#fff;margin-top:10px;padding:13px 20px}nav.main a.m-cta::after{display:none}}
+
+/* =========================================================
+   v3 — Mobil revizeler
+   ========================================================= */
+/* Masaüstü varsayılanları */
+.gallery-strip .only-m,.swipe-hint{display:none}
+details.fcol summary{list-style:none;cursor:default}
+details.fcol summary::-webkit-details-marker{display:none}
+details.fcol summary h4{margin:0 0 .8em}
+footer.site .cols{grid-template-columns:1.4fr 1fr 1fr 1fr}
+@media (max-width:1000px) and (min-width:701px){footer.site .cols{grid-template-columns:1fr 1fr 1fr}.fbrand{grid-column:1/-1}}
+footer.site .fcol ul{columns:1}
+
+/* Hamburger menüde "Özet Gönder" en üstte */
+@media (max-width:1240px){
+  nav.main.open{max-height:calc(100vh - 110px);overflow-y:auto}
+  nav.main a.m-cta{order:-1;margin:0 0 12px;width:100%}
+}
+
+@media (max-width:700px){
+  /* Genel ölçüler */
+  body{font-size:16px;line-height:1.65}
+  .wrap{width:calc(100% - 40px)}                 /* sağ/sol ~20px */
+  section.block,.page-head{padding:56px 0}
+  .page-head{padding:44px 0 40px}
+  .section-title{margin-bottom:22px}
+  h2{font-size:1.75rem}
+  .note,.counter,.form-msg{font-size:.85rem}
+  .strip small,.section-title .kicker,.page-head .kicker{font-size:.78rem}
+  .strip b{font-size:1rem}
+  .strip .it{padding:18px 16px}
+
+  /* Hero: Eyebrow → Başlık → Tema → Tarih/Konum → Badge → CTA → Artwork */
+  .hero .wrap{grid-template-columns:1fr;gap:28px;padding:36px 0 40px}
+  .hero-art{order:0}
+  .hero-art img{max-width:230px}
+  .hero-kicker{font-size:.76rem;line-height:1.5;margin-bottom:14px}
+  .hero h1{font-size:2.55rem;line-height:1.06;letter-spacing:-.025em;margin-bottom:16px}
+  .hero .sub{font-size:1.05rem;line-height:1.5;margin-bottom:24px}
+  .hero .meta{flex-direction:column;gap:14px;margin-bottom:24px}
+  .hero .meta b{font-size:1.3rem}
+  .hero .meta span{font-size:.95rem}
+  .badges{margin:0 0 24px}
+  .badge{font-size:.88rem}
+  .hero .btns{gap:10px}
+  .hero .btns .btn{flex:1 1 auto;justify-content:center}
+
+  /* Önemli Tarihler: kartlara daha fazla yatay alan, daha büyük yardımcı metin */
+  .timeline::before{left:6px}
+  .timeline li{padding-left:26px;gap:8px}
+  .timeline li::before{left:-1px;top:6px}
+  .timeline .d{font-size:1.05rem}
+  .timeline .d small{display:inline;font-size:.85rem;margin-left:6px}
+  .timeline .c{padding:12px 16px;font-size:1rem}
+
+  /* Nasıl katılabilirsiniz: 2×2 korunuyor */
+  .grid.g2 .grid.g2{grid-template-columns:1fr 1fr}
+  .callout{font-size:.95rem}
+
+  /* Bildiri çağrısı: tamamen dikey */
+  .cta-band .wrap{grid-template-columns:1fr;gap:26px;padding:56px 0}
+  .cta-band p{font-size:1rem}
+  .cta-side{align-items:stretch;width:100%}
+  .deadline{flex-direction:column;align-items:flex-start;gap:4px;padding:16px 18px}
+  .deadline b{font-size:1.5rem}
+  .deadline span{font-size:.9rem}
+  .cta-band .btns{flex-direction:column;width:100%}
+  .cta-band .btns .btn{width:100%;justify-content:center}
+
+  /* Galeri: yatay kaydırmalı carousel (~1.3 görsel görünür) */
+  .gallery-strip{display:flex;grid-template-columns:none;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px 6px;scroll-padding:0 20px;scrollbar-width:none}
+  .gallery-strip::-webkit-scrollbar{display:none}
+  .gallery-strip a,.gallery-strip .hide-m,.gallery-strip .only-m{display:block;flex:0 0 76%;aspect-ratio:4/3;scroll-snap-align:start;border-radius:14px}
+  .swipe-hint{display:block;font:600 .85rem var(--head);color:var(--ink-soft);margin:10px 0 0}
+
+  /* Paydaş logoları: büyük, 2×2 */
+  .partners{display:grid;grid-template-columns:1fr 1fr;gap:28px 20px;align-items:center;justify-items:center}
+  .partners img{height:auto;max-height:96px;width:auto;max-width:100%}
+  .partners img:first-child{grid-column:1/-1;max-height:none;width:100%;max-width:340px}
+
+  /* Footer: kısa + akordeon */
+  footer.site{padding:44px 0 24px;font-size:1rem}
+  .foot-cta{flex-direction:column;align-items:stretch;padding:24px 22px;gap:18px;margin-bottom:28px}
+  .foot-cta b{font-size:1.05rem;line-height:1.4}
+  .foot-cta span{font-size:.95rem}
+  .foot-cta .btn{justify-content:center}
+  footer.site .cols{grid-template-columns:1fr;gap:0}
+  .fbrand{margin-bottom:12px}
+  .fbrand p{font-size:.95rem;margin-bottom:8px}
+  footer.site .flogos img{height:36px}
+  details.fcol{border-top:1px solid rgba(255,255,255,.14)}
+  details.fcol:last-of-type{border-bottom:1px solid rgba(255,255,255,.14)}
+  details.fcol summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+  details.fcol summary h4{margin:0;font-size:.95rem}
+  details.fcol summary::after{content:"+";font:400 1.5rem/1 var(--head);color:var(--tan);transition:transform .2s}
+  details.fcol[open] summary::after{transform:rotate(45deg)}
+  details.fcol ul{padding:0 0 16px}
+  footer.site li{margin-bottom:10px;font-size:1rem}
+  footer.site .contacts li span{font-size:.85rem}
+  footer.site .copy{font-size:.88rem;margin-top:20px}
+}
+@media (max-width:700px){.timeline .badge{font-size:.75rem;padding:2px 8px}.deadline small{font-size:.8rem}}

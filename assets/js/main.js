@@ -360,7 +360,17 @@ document.addEventListener('DOMContentLoaded', () => {
   tt.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
   $('#year').textContent = new Date().getFullYear();
   initReveal();
+  footerAccordion();
 });
+
+/* Footer: mobilde akordeon (kapalı başlar), masaüstünde hep açık */
+function footerAccordion() {
+  const mq = matchMedia('(max-width: 700px)');
+  const set = () => $$('details.fcol').forEach(d => { d.open = !mq.matches; });
+  set();
+  mq.addEventListener ? mq.addEventListener('change', set) : mq.addListener(set);
+  $$('details.fcol summary').forEach(s => s.addEventListener('click', e => { if (!mq.matches) e.preventDefault(); }));
+}
 
 /* Kaydırınca beliren bloklar */
 let revealObs;
@@ -377,7 +387,7 @@ function initReveal() {
 }
 function markReveal() {
   if (!revealObs) return;
-  $$('.page.show .section-title, .page.show .card, .page.show .person, .page.show .timeline li, .page.show .gallery a, .page.show details.acc, .page.show .callout, .page.show .tl, .page.show .gallery-strip a, .page.show .prose')
+  $$('.page.show .section-title, .page.show .card, .page.show .person, .page.show .timeline li, .page.show .gallery a, .page.show details.acc, .page.show .callout, .page.show .tl, .page.show .gallery-strip, .page.show .prose')
     .forEach((el, i) => {
       if (el.classList.contains('reveal')) return;
       const r = el.getBoundingClientRect();
