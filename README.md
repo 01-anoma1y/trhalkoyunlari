@@ -9,6 +9,9 @@ Kongre web sitesi örneği ve basılı materyaller. Site Türkçe / İngilizce (
 | Yol | İçerik |
 |---|---|
 | `index.html` | Web sitesi (tek sayfa, sekmeli) |
+| `content/site.json` | İletişim, tarihler, kurullar, program (tek kaynak) |
+| `tools/build.py` | site.json içeriğini index.html'e yazan ve denetleyen betik |
+| `404.html` | Bulunamayan sayfa |
 | `assets/` | Site stilleri, kodu, logolar ve görseller |
 | `baski/afis.png`, `baski/afis-A3.pdf` | Açıklayıcı afiş |
 | `baski/davetiye-tr-en.pdf` (+ PNG'ler) | Davetiye, Türkçe ve İngilizce |
@@ -25,9 +28,23 @@ Ana Sayfa · Kongre · Tema ve Konular · Önemli Tarihler · Kurullar · Bildir
 - Bildiri: yazım kuralları, poster kuralları, kelime sayaçlı özet gönderim formu
 - Kayıt: kayıt formu (formlar bilgileri kongre e-postasına gönderir)
 
+## İçerik nasıl güncellenir
+
+Sitedeki **e-posta, web adresi, tüm tarihler, kurul listeleri ve program** tek bir dosyadan gelir: `content/site.json`.
+
+1. `content/site.json` dosyasında ilgili değeri değiştirin (ör. `contact.email`, `dates.abstractDeadline`).
+2. `python3 tools/build.py` çalıştırın. Betik değerleri `index.html` içine yazar, tarihlerin sırasını ve gün adlarını denetler, boş kalan alan olursa hata verir.
+3. `python3 tools/build.py --check` ile sayfanın güncel olduğunu doğrulayabilirsiniz.
+
+Notlar:
+- Özet son tarihi (`abstractDeadline`) ve kayıt son tarihi (`registrationDeadline`) ayrı tanımlıdır.
+- Gün adları (Çarşamba, Perşembe…) elle yazılmaz, tarihten otomatik üretilir.
+- Program geldiğinde `program[].sessions` listesine `{"time": "09:30", "tr": "…", "en": "…", "hall": "Salon A"}` biçiminde oturum eklemek yeterlidir.
+- Değerler HTML'e yazıldığı için sayfa JavaScript çalışmadan da (arama motorları, link önizlemeleri) eksiksiz okunur.
+
 ## Yapılacaklar
 
-1. **Yeni e-posta ve site adı:** `assets/js/main.js` dosyasının en üstündeki `CONFIG` içinde `email` ve `site` değerlerini değiştirin. Site her yerde otomatik günceller.
+1. **Yeni e-posta ve site adı:** `content/site.json` içinde `contact.email` ve `contact.site` değerlerini değiştirip `python3 tools/build.py` çalıştırın.
    Afiş/davetiye/bannerlarda geçici olarak `yenimail@gmail.com` ve `www.siteadi.com` yazıyor; `baski/kaynak/*.html` içinde değiştirilip yeniden çıktısı alınmalı.
 2. Yürütme Kurulu isimleri gelince `index.html` içindeki "Yürütme Kurulu" bölümüne eklenecek.
 3. Kongre programı (4 Aralık) gelince **Program** sekmesi doldurulacak.

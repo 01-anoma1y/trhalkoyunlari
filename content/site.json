@@ -1,0 +1,486 @@
+{
+ "_not": "Sitedeki iletişim bilgileri, tarihler, kurullar ve program buradan gelir. Değiştirdikten sonra: python3 tools/build.py",
+ "contact": {
+  "email": "yenimail@gmail.com",
+  "site": "www.siteadi.com",
+  "phones": [
+   {
+    "name": "Arş. Gör. Dr. Gül KAPLAN EKEMEN",
+    "short": "Gül KAPLAN EKEMEN",
+    "tel": "+90 535 301 84 44"
+   },
+   {
+    "name": "Arş. Gör. Semih ÖZBİLGİ",
+    "short": "Semih ÖZBİLGİ",
+    "tel": "+90 555 688 42 03"
+   }
+  ]
+ },
+ "baseUrl": "https://01-anoma1y.github.io/trhalkoyunlari/",
+ "dates": {
+  "abstractDeadline": "2026-11-25",
+  "acceptance": "2026-11-28",
+  "registrationDeadline": "2026-12-01",
+  "programAnnouncement": "2026-12-04",
+  "congressStart": "2026-12-10",
+  "congressDay2": "2026-12-11",
+  "congressEnd": "2026-12-12"
+ },
+ "congressStartTime": "09:00",
+ "timezone": "Europe/Istanbul",
+ "timeline": [
+  {
+   "date": "abstractDeadline",
+   "tr": "Bildiri özetlerinin gönderilebileceği son tarih",
+   "en": "Deadline for sending abstracts"
+  },
+  {
+   "date": "acceptance",
+   "tr": "Kabul edilen bildirilerin ilanı",
+   "en": "Announcement of accepted papers"
+  },
+  {
+   "date": "registrationDeadline",
+   "tr": "Kongreye kayıt için son tarih",
+   "en": "Deadline for congress registration"
+  },
+  {
+   "date": "programAnnouncement",
+   "tr": "Kongre programının ilanı",
+   "en": "Announcement of the congress program"
+  },
+  {
+   "date": "congressStart",
+   "tr": "1. Gün — Kongre açılışı ve bildiri sunumları",
+   "en": "Day 1 — Congress opening and paper presentations",
+   "congress": true
+  },
+  {
+   "date": "congressDay2",
+   "tr": "2. Gün — Bildiri sunumları",
+   "en": "Day 2 — Paper presentations",
+   "congress": true
+  },
+  {
+   "date": "congressEnd",
+   "tr": "3. Gün — Bildiri sunumları, kongre kapanışı ve gezi programı",
+   "en": "Day 3 — Paper presentations, closing of the congress and excursion",
+   "congress": true
+  }
+ ],
+ "program": [
+  {
+   "date": "congressStart",
+   "tr": "Kongre Açılışı ve Bildiri Sunumları",
+   "en": "Congress Opening and Paper Presentations",
+   "sessions": []
+  },
+  {
+   "date": "congressDay2",
+   "tr": "Bildiri Sunumları",
+   "en": "Paper Presentations",
+   "sessions": []
+  },
+  {
+   "date": "congressEnd",
+   "tr": "Bildiri Sunumları, Kongre Kapanışı ve Gezi Programı",
+   "en": "Paper Presentations, Closing of the Congress and Excursion",
+   "sessions": []
+  }
+ ],
+ "_programOrnek": {
+  "time": "09:30",
+  "tr": "Açılış konuşmaları",
+  "en": "Opening speeches",
+  "hall": "Salon A"
+ },
+ "committees": {
+  "organizing": [
+   {
+    "name": "Prof. Kerem Cenk YILMAZ",
+    "institution": "Sakarya Üniversitesi",
+    "lead": true
+   },
+   {
+    "name": "Prof. Dr. Sertan DEMİR",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Prof. Dr. Mustafa ŞAHİN",
+    "institution": "Ardahan Üniversitesi"
+   },
+   {
+    "name": "Prof. Dr. Zeynel TURAN",
+    "institution": "Burdur Mehmet Akif Ersoy Üniversitesi"
+   },
+   {
+    "name": "Doç. Dr. Dilek CANTEKİN ELYAĞUTU",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Doç. Dr. Arda ERAVCI",
+    "institution": "Giresun Üniversitesi"
+   },
+   {
+    "name": "Dr. Öğr. Üy. Umut ERDOĞAN",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Öğr. Gör. Dr. Yiğit Hakan ÜNLÜ",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Öğr. Gör. Dr. Deniz KÖKTAN",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Öğr. Gör. Eda ERTURAL",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Öğr. Gör. Gökhan ÜLKER",
+    "institution": "Eskişehir Osmangazi Üniversitesi"
+   }
+  ],
+  "secretariat": [
+   {
+    "name": "Arş. Gör. Dr. Gül KAPLAN EKEMEN",
+    "institution": "Sakarya Üniversitesi"
+   },
+   {
+    "name": "Arş. Gör. Semih ÖZBİLGİ",
+    "institution": "Sakarya Üniversitesi"
+   }
+  ],
+  "referees": [
+   {
+    "name": "Dr. Ahmet Selim DOĞAN",
+    "institution": "ATATÜRK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Adem KOÇ",
+    "institution": "ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Abdulmenaf KORKUTATA",
+    "institution": "ÇANAKKALE ONSEKİZ MART ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Anna HOFFMAN",
+    "institution": "RESEARCH CENTER OF SLOVIAN ACD OF SCIENCES AND ARTS"
+   },
+   {
+    "name": "Dr. Ann R. DAVID",
+    "institution": "BONH ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Arda ERAVCI",
+    "institution": "GİRESUN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Arzu ÖZTÜRKMEN",
+    "institution": "BOĞAZİÇİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Aslı Büyükokutan TÖRET",
+    "institution": "ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Asuman TURAN",
+    "institution": "MEHMET AKİF ERSOY ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Ayrin ERSÖZ",
+    "institution": "YILDIZ TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Ayşin KABALAK",
+    "institution": "MİMAR SİNAN GÜZEL SANATLAR ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Bora OKTAN",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Bülent KURTİŞOĞLU",
+    "institution": "ARDAHAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Cafer Talha ŞEKER",
+    "institution": "İSTANBUL TİCARET ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Cihan YURTÇU",
+    "institution": "İSTANBUL TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Chi -Fang CHAO",
+    "institution": "ROEHAMPTON UNIVERSITY"
+   },
+   {
+    "name": "Dr. Dilek CANTEKİN ELYAĞUTU",
+    "institution": "SAKARYA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Dilek TÜRKYILMAZ",
+    "institution": "HACI BAYRAM VELİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Elsie IVANCICH DUNIN",
+    "institution": "KALIFORNİA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Elvan Deniz YUMUK",
+    "institution": "ALAADDİN KEYKUBAT ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Emrah ÖZDEMİR",
+    "institution": "RUMELİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Enver SADIKOVA",
+    "institution": "BAKÜ MÜZİK AKADEMİSİ"
+   },
+   {
+    "name": "Dr. Ercan KILKIL",
+    "institution": "MUĞLA SITKI KOÇMAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Erhan TEKİN",
+    "institution": "HATAY MUSTAFA KEMAL ÜNİVERSİSTESİ"
+   },
+   {
+    "name": "Dr. Eylem DERELİ",
+    "institution": "ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Faik TANRIKULU",
+    "institution": "İSTANBUL MEDİPOL ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. F. Belma OĞUL",
+    "institution": "İSTANBUL TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Gencay KARAKAYA",
+    "institution": "İSTANBUL TİCARET ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Gülay MİRZAOĞLU",
+    "institution": "HACETTEPE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Habiba MAMEDOVA",
+    "institution": "BAKÜ KOREOGRAFİ AKADEMİSİ"
+   },
+   {
+    "name": "Dr. Hakan ACAR",
+    "institution": "MEHMET AKİF ERSOY ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Hale YAMANER",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Hasan Ali DAĞLI",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Haydar TANRIVERDİ",
+    "institution": "İSTANBUL TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Ida MEFTAHI",
+    "institution": "MARYLAND ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. İdris Ersan KÜÇÜK",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. İlknur BEKTAŞ",
+    "institution": "İSTANBUL TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Irene MARKOFF",
+    "institution": "YORK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. İsmail GÜVEN",
+    "institution": "ANKARA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. İsmail SINIR",
+    "institution": "MUĞLA SITKI KOÇMAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. John MARGON O'CONNELL",
+    "institution": "CARDIFF ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Kamile PERÇİN AKGÜL",
+    "institution": "GAZİANTEP ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Kemal ÖZAVCI",
+    "institution": "ARDAHAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Kerem CENK YILMAZ",
+    "institution": "SAKARYA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Konstantinos DIMOPOULOS",
+    "institution": "NATIONAL AND KAPODISTRIAN UNIVERSITY OF ATHENS"
+   },
+   {
+    "name": "Dr. Kürşat ÖNCÜL",
+    "institution": "ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Lucie HAYASHI",
+    "institution": "ACADEMY OF PERFORMING ARTS IN PRAGUE"
+   },
+   {
+    "name": "Dr. Maria ARGYRIOU",
+    "institution": "APPLIED MUSIC PEDAGOGY UNIVERSITY OF THE AEGEAN"
+   },
+   {
+    "name": "Dr. Mehmet Onurhan GÜCÜŞ",
+    "institution": "KARAMANOĞLU MEHMETBEY ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Mehmet Öcal ÖZBİLGİN",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Mırna SABLJAR",
+    "institution": "JOSIP JURAJ STROSSMAYER UNIVERSITY OF OSIJEK"
+   },
+   {
+    "name": "Dr. Mustafa KAYA",
+    "institution": "SİVAS CUMHURİYET ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Mustafa ŞAHİN",
+    "institution": "ARDAHAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Muzaffer SÜMBÜL",
+    "institution": "ÇUKUROVA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Necip ÇETİN",
+    "institution": "VAN YÜZÜNCÜ YIL ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Öcal OĞUZ",
+    "institution": "GAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Ömer ADIGÜZEL",
+    "institution": "ANKARA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Ömer Barbaros ÜNLÜ",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Onur AYKAÇ",
+    "institution": "KARAMANOĞLU MEHMETBEY ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Özkul ÇOBANOĞLU",
+    "institution": "HACETTEPE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Pınar KASAPOĞLU",
+    "institution": "HACETTEPE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Pınar Karacan DOĞAN",
+    "institution": "GAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Rumiana MARGARİTOVA",
+    "institution": "INSTITUTE OF ART STUDIES, BULGARIAN ACADEMY OF SCIENCES"
+   },
+   {
+    "name": "Dr. Savaş EKİCİ",
+    "institution": "GAZİANTEP ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Selami AKIŞ",
+    "institution": "ARDAHAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Serdar KASTELLİ",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Öğr. Üyesi Seren ERAVCI",
+    "institution": "GİRESUN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Serpil MÜRTEZAOĞLU",
+    "institution": "İSTANBUL TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Sema ERKAN",
+    "institution": "EGE ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Serhat TURUNÇ",
+    "institution": "İSTANBUL TEKNİK ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Serkan KELEŞOĞLU",
+    "institution": "ANKARA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Şirin ŞENGEL",
+    "institution": "ESKİŞEHİR OSMANGAZİ ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Süleyman FİDAN",
+    "institution": "GAZİANTEP ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Tatyana KARTASHOVA",
+    "institution": "L. V. SARATOV DEVLET KONSERVATUVARI SOBINOVA"
+   },
+   {
+    "name": "Dr. Tolga KARACA",
+    "institution": "GAZİOSMANPAŞA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Tuğçe TUNA",
+    "institution": "MİMAR SİNAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Turgay AKDAĞOĞLU",
+    "institution": "ARDAHAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Umut ERDOĞAN",
+    "institution": "SAKARYA ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Yakup AÇAR",
+    "institution": "KAFKAS ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Yunus Emre ÜSTGÖRÜL",
+    "institution": "MUĞLA SITKI KOÇMAN ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Zeynel TURAN",
+    "institution": "MEHMET AKİF ERSOY ÜNİVERSİTESİ"
+   },
+   {
+    "name": "Dr. Zinnur GEREK",
+    "institution": "GAZİANTEP ÜNİVERSİTESİ"
+   }
+  ]
+ }
+}

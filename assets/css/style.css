@@ -543,3 +543,92 @@ footer.site .fcol ul{columns:1}
   footer.site .copy{font-size:.88rem;margin-top:20px}
 }
 @media (max-width:700px){.timeline .badge{font-size:.75rem;padding:2px 8px}.deadline small{font-size:.8rem}}
+
+/* =========================================================
+   v4 — erişilebilirlik, formlar, program, mobil düzeltmeler
+   ========================================================= */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:400;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font:700 .9rem var(--head);text-decoration:none}
+.skip:focus{top:12px}
+main:focus{outline:none}
+picture{display:contents}
+
+/* Görünür odak */
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+.btn:focus-visible{outline-offset:4px;border-radius:999px}
+.f input:focus-visible,.f select:focus-visible,.f textarea:focus-visible{outline:3px solid var(--sky);outline-offset:1px;border-radius:12px}
+.dd.closed .sub{opacity:0 !important;visibility:hidden !important}
+
+/* Form hataları ve yardımcı metinler */
+.f [aria-invalid="true"]{border-color:var(--red);background:#fff7f8}
+.field-err{color:var(--red);font-size:.88rem;font-weight:600;margin-top:6px}
+.field-err:empty{display:none}
+.form-deadline{background:var(--tan-soft);border-radius:12px;padding:12px 16px;font-size:.95rem}
+.form-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.linkish{background:none;border:0;padding:6px 2px;font:600 .9rem var(--body);color:var(--ink-soft);text-decoration:underline;cursor:pointer}
+.mail-note{font-size:.92rem;color:var(--ink-soft);margin:0;background:#f3f6fb;border-radius:12px;padding:12px 16px}
+.form-msg a{font-weight:700}
+.copy-btn{margin-top:10px;padding:9px 16px;font-size:.85rem}
+
+/* Program kartları (veriden) */
+.day-label{font:700 .78rem var(--head);letter-spacing:.14em;color:var(--tan);margin-bottom:8px}
+.sessions{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.sessions b{font-family:var(--head);color:var(--navy);margin-right:6px}
+
+/* Galeri büyütme penceresi */
+.lightbox{grid-template-columns:auto 1fr auto;gap:12px;align-items:center;justify-items:center}
+.lightbox img{max-width:min(100%,1100px);max-height:86vh;border-radius:12px;cursor:default}
+.lightbox button{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:50%;width:48px;height:48px;font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.lightbox button:hover{background:rgba(255,255,255,.25)}
+.lightbox .lb-close{position:absolute;top:16px;right:16px}
+.lightbox .lb-count{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#fff;font:600 .9rem var(--head)}
+@media (max-width:700px){.lightbox{grid-template-columns:1fr;padding:56px 12px}.lightbox .lb-prev,.lightbox .lb-next{position:absolute;bottom:12px}.lightbox .lb-prev{left:16px}.lightbox .lb-next{right:16px}}
+
+/* Başlıktaki CTA uzun İngilizce metinde taşmasın */
+.nav-cta{white-space:nowrap}
+@media (min-width:1241px){.brand .bt{display:none !important}}
+
+/* ---------- Mobil (P1) ---------- */
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-art{order:0}                                   /* görsel her zaman içerikten sonra */
+  .cta-band .wrap{grid-template-columns:1fr}
+  .cta-side{align-items:stretch;width:100%}
+  .cta-band .btns{flex-direction:column;width:100%}
+  .cta-band .btns .btn{width:100%;justify-content:center}
+}
+@media (max-width:700px){
+  .topbar{display:none}                                /* ilk ekranda başlığa yer aç */
+  header.site .wrap{min-height:64px}
+  .brand img{height:40px}
+  .hero .wrap{padding:28px 0 36px;gap:24px}
+  .hero-kicker{margin-bottom:12px}
+  .hero h1{font-size:clamp(2.2rem,10.5vw,2.75rem)}
+  .hero-art img{max-width:165px;opacity:.95}           /* ~%30 daha küçük, dekoratif */
+  .hero-art img{animation-duration:0s !important}
+  /* yardımcı metinler */
+  .hero .meta span,.badge,.note,.mail-note,.form-deadline,.field-err{font-size:.95rem}
+  .timeline .c{font-size:1.02rem;line-height:1.5}
+  .timeline .d small{font-size:.9rem}
+  .card p,.callout{font-size:1rem}
+  .strip small{font-size:.8rem}
+  /* paydaş logoları daha büyük */
+  .partners{gap:32px 20px}
+  .partners img{max-height:112px}
+  .partners img:first-child{max-width:380px}
+  /* footer metinleri */
+  footer.site,footer.site li,footer.site a{font-size:1rem}
+  footer.site .contacts li span,.fbrand p{font-size:.95rem}
+  footer.site .copy{font-size:.9rem;padding-bottom:8px}
+  /* yukarı çık: köşede, güvenli alanla */
+  .to-top{right:max(14px,env(safe-area-inset-right));bottom:max(14px,env(safe-area-inset-bottom));width:44px;height:44px}
+}
+@media (max-width:360px){
+  .wrap{width:calc(100% - 32px)}
+  .hero h1{font-size:2.1rem}
+  .hero .btns{flex-direction:column}
+  .hero .btns .btn{width:100%}
+  .grid.g2 .grid.g2 .card{padding:14px}
+  .grid.g2 .grid.g2 .card h3{font-size:.9rem}
+  .gallery-strip{margin:0 -16px;padding:0 16px 6px}
+}
