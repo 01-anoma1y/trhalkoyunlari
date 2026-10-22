@@ -637,3 +637,15 @@ picture{display:contents}
   .hero .wrap{gap:12px;padding-bottom:16px}
   .hero-art img{max-width:min(280px,78vw)}
 }
+/* Paydaş logoları: dengeli boyutlar */
+.partners{gap:56px}
+.partners img{width:auto;max-width:100%;mix-blend-mode:multiply}
+.partners .p-sau{height:56px}
+.partners .p-thof{height:64px}
+.partners .p-thofy{height:52px}
+@media (max-width:700px){
+  .partners{gap:24px 20px}
+  .partners img:first-child,.partners .p-sau{height:auto;max-height:none;width:100%;max-width:280px}
+  .partners .p-thof{height:60px;max-height:none}
+  .partners .p-thofy{height:40px;max-height:none}
+}
