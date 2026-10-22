@@ -339,4 +339,31 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => tt.classList.toggle('on', scrollY > 600));
   tt.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
   $('#year').textContent = new Date().getFullYear();
+  initReveal();
 });
+
+/* Kaydırınca beliren bloklar */
+let revealObs;
+function initReveal() {
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  revealObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) {
+      const el = e.target; el.classList.add('in'); revealObs.unobserve(el);
+      setTimeout(() => { el.style.transitionDelay = ''; el.classList.add('done'); }, 900);
+    }
+  }), { rootMargin: '0px 0px -8% 0px' });
+  markReveal();
+  window.addEventListener('hashchange', () => setTimeout(markReveal, 30));
+}
+function markReveal() {
+  if (!revealObs) return;
+  $$('.page.show .section-title, .page.show .card, .page.show .person, .page.show .timeline li, .page.show .gallery a, .page.show details.acc, .page.show .callout, .page.show .chip, .page.show .prose')
+    .forEach((el, i) => {
+      if (el.classList.contains('reveal')) return;
+      const r = el.getBoundingClientRect();
+      if (r.top < innerHeight) return; // ekranda olanlar hemen görünür kalsın
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 4) * 60 + 'ms';
+      revealObs.observe(el);
+    });
+}
