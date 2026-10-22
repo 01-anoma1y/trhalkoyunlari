@@ -655,3 +655,13 @@ picture{display:contents}
 .map-row .map{height:100%;min-height:360px;display:block}
 @media (max-width:640px){.map-row .map{height:300px;min-height:0}}
 .person a.tel{display:inline-block;margin-top:2px;font:600 .92rem var(--body);color:var(--navy)}
+
+/* Partner logoları: iki logo, ortalı ve aynı yükseklikte */
+.partners{display:flex;justify-content:center;align-items:center;gap:56px;flex-wrap:wrap}
+.partners .p-sau{height:60px;width:auto;max-width:100%;max-height:none}
+.partners .p-thof{height:92px;width:auto;max-height:none}
+@media (max-width:700px){
+  .partners{flex-direction:column;gap:20px}
+  .partners .p-sau,.partners img:first-child{height:auto;width:min(270px,78vw);max-width:none}
+  .partners .p-thof{height:84px;width:auto}
+}
