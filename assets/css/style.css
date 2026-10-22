@@ -676,3 +676,9 @@ footer.site .flogos .f-thof{height:58px;background:#fff;border-radius:50%;paddin
 }
 footer.site .flogos .f-thof{height:64px;background:none;border-radius:0;padding:0}
 @media (max-width:700px){footer.site .flogos .f-thof{height:52px}}
+/* Mobil: paydaş logoları yan yana */
+@media (max-width:700px){
+  .partners{flex-direction:row;flex-wrap:nowrap;gap:16px}
+  .partners .p-sau,.partners img:first-child{width:auto;min-width:0;flex:0 1 auto;height:auto;max-width:calc(100% - 82px)}
+  .partners .p-thof{flex:0 0 auto;height:66px}
+}
