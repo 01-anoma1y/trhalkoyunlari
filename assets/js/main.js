@@ -341,6 +341,10 @@ function wireKeyboard() {
     if (dd) { dd.classList.add('closed'); dd.querySelector(':scope > a').focus(); }
     if ($('nav.main.open')) { closeMenu(); $('.burger').focus(); }
   });
+  // Fareyle tıklanınca menü açık kalmasın: odağı bırak ve menüyü kapat
+  $$('.dd a').forEach(a => a.addEventListener('click', () => {
+    const dd = a.closest('.dd'); a.blur(); dd.classList.add('closed');
+  }));
   $$('.dd').forEach(dd => {
     dd.addEventListener('mouseleave', () => dd.classList.remove('closed'));
     dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) dd.classList.remove('closed'); });

@@ -367,8 +367,8 @@ nav.main a{font-size:.9rem;padding:9px 12px}
 .caret{width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);opacity:.6;transition:transform .2s}
 .dd .sub{position:absolute;top:100%;left:0;min-width:240px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(28,37,65,.14);padding:8px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;margin-top:6px;z-index:5}
 .dd .sub::before{content:"";position:absolute;left:0;right:0;top:-10px;height:10px}
-.dd:hover .sub,.dd:focus-within .sub{opacity:1;visibility:visible;transform:none}
-.dd:hover .caret,.dd:focus-within .caret{transform:translateY(1px) rotate(225deg)}
+.dd:hover .sub,.dd:has(:focus-visible) .sub{opacity:1;visibility:visible;transform:none}
+.dd:hover .caret,.dd:has(:focus-visible) .caret{transform:translateY(1px) rotate(225deg)}
 .dd .sub a{font-weight:600;font-size:.88rem;padding:10px 12px;border-radius:10px;white-space:nowrap}
 .dd .sub a::after{display:none}
 .dd .sub a.active{background:var(--tan-soft);color:var(--ink)}
