@@ -688,3 +688,16 @@ footer.site .flogos .f-thof{height:64px;background:none;border-radius:0;padding:
   footer.site .flogos .f-sau{width:auto;height:auto;min-width:0;flex:0 1 auto;max-width:min(300px,calc(100% - 84px))}
   footer.site .flogos .f-thof{flex:0 0 auto;height:66px}
 }
+
+/* Açılış ekranı (preloader) */
+.preloader{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:var(--paper);transition:opacity .45s ease,visibility .45s ease;animation:pl-safety .01s 6s forwards}
+.preloader.pl-done{opacity:0;visibility:hidden}
+.pl-in{display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px}
+.pl-in img{width:min(220px,56vw);height:auto;animation:pl-float 1.6s ease-in-out infinite}
+.pl-in b{font:800 1.35rem var(--head,Montserrat,sans-serif);letter-spacing:.18em;color:var(--ink)}
+.pl-in b span{color:var(--tan)}
+.pl-bar{width:140px;height:3px;border-radius:3px;background:var(--line);overflow:hidden}
+.pl-bar i{display:block;width:40%;height:100%;border-radius:3px;background:var(--navy);animation:pl-run 1.1s ease-in-out infinite}
+@keyframes pl-run{0%{transform:translateX(-110%)}100%{transform:translateX(260%)}}
+@keyframes pl-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes pl-safety{to{opacity:0;visibility:hidden}}

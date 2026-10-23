@@ -5,30 +5,59 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sayfa bulunamadı | UHOK 2026</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#1c2541">
 <link rel="icon" type="image/png" href="/assets/img/favicon-64.png" id="fav">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:'Segoe UI',system-ui,sans-serif;color:#1c2541;background:#f7f8fb;padding:24px;box-sizing:border-box;text-align:center}
-  main{max-width:520px}
-  b{display:block;font-size:4rem;line-height:1;color:#a8794e;margin-bottom:12px}
-  h1{font-size:1.6rem;margin:0 0 10px}
-  p{color:#4a5370;line-height:1.6;margin:0 0 6px}
-  a{display:inline-block;margin-top:20px;background:#1f3c88;color:#fff;text-decoration:none;font-weight:700;padding:12px 22px;border-radius:999px}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:grid;place-items:center;padding:32px 20px;text-align:center;
+    font-family:'Source Sans 3','Segoe UI',system-ui,sans-serif;color:#1c2541;background:#f7f8fb}
+  main{max-width:680px;width:100%}
+  .fig{width:min(240px,62vw);height:auto;margin:0 auto 8px;display:block;animation:sway 3s ease-in-out infinite}
+  @keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+  .code{font:800 clamp(3.5rem,14vw,5.5rem)/1 Montserrat,system-ui,sans-serif;color:#a8794e;letter-spacing:.06em;margin:0 0 6px}
+  h1{font:700 clamp(1.25rem,4.5vw,1.6rem)/1.3 Montserrat,system-ui,sans-serif;margin:0 0 10px}
+  p{color:#4a5370;line-height:1.6;margin:0 0 4px;font-size:1.05rem}
+  p.en{font-size:.95rem;opacity:.85}
+  .btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  a.btn{display:inline-block;text-decoration:none;font:700 .95rem Montserrat,system-ui,sans-serif;padding:13px 22px;border-radius:999px;transition:transform .2s,box-shadow .2s}
+  a.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(28,37,65,.15)}
+  a.pri{background:#1f3c88;color:#fff}
+  a.sec{background:#fff;color:#1f3c88;border:2px solid #dfe3ec}
   a:focus-visible{outline:3px solid #2f8fd8;outline-offset:3px}
+  .logos{display:flex;gap:22px;justify-content:center;align-items:center;margin-top:36px;opacity:.9}
+  .logos img{height:40px;width:auto}
+  .logos img.t{height:52px}
+  @media (prefers-reduced-motion:reduce){.fig{animation:none}}
 </style>
 </head>
 <body>
 <main>
-  <b>404</b>
-  <h1>Aradığınız sayfa bulunamadı</h1>
-  <p>5. Uluslararası Halk Oyunları Kongresi sitesinde bu adreste bir sayfa yok.</p>
-  <p lang="en">The page you are looking for could not be found.</p>
-  <a href="/" id="home">Ana sayfaya dön / Back to home</a>
+  <img class="fig" src="/assets/img/halk-oyunlari-figur.webp" alt="" width="530" height="332" data-src>
+  <div class="code">404</div>
+  <h1>Bu sayfa halay dışında kalmış!</h1>
+  <p>Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.</p>
+  <p class="en" lang="en">The page you are looking for could not be found.</p>
+  <div class="btns">
+    <a class="btn pri" href="/" data-href="">Ana sayfa / Home</a>
+    <a class="btn sec" href="/#bildiri" data-href="#bildiri">Bildiri Gönderimi</a>
+    <a class="btn sec" href="/#iletisim" data-href="#iletisim">İletişim / Contact</a>
+  </div>
+  <div class="logos">
+    <img src="/assets/logos/sakarya-universitesi.png" alt="Sakarya Üniversitesi" width="980" height="142" data-src>
+    <img class="t" src="/assets/logos/thof-logo-renkli.png" alt="Türkiye Halk Oyunları Federasyonu" width="379" height="380" data-src>
+  </div>
 </main>
 <script>
-  // GitHub Pages alt klasörde (/trhalkoyunlari/), Vercel kök dizinde çalışır
+  // Site alan adının kökünde ya da GitHub Pages alt klasöründe (/trhalkoyunlari/) çalışır
   var base = location.pathname.indexOf("/trhalkoyunlari/") === 0 ? "/trhalkoyunlari/" : "/";
-  document.getElementById("home").href = base;
-  document.getElementById("fav").href = base + "assets/img/favicon-64.png";
+  if (base !== "/") {
+    document.querySelectorAll("[data-href]").forEach(function (a) { a.href = base + a.getAttribute("data-href"); });
+    document.querySelectorAll("img[data-src]").forEach(function (i) { i.src = base + i.getAttribute("src").replace(/^\//, ""); });
+    document.getElementById("fav").href = base + "assets/img/favicon-64.png";
+  }
 </script>
 </body>
 </html>

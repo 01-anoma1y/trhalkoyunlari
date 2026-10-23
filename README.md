@@ -50,6 +50,17 @@ Notlar:
 3. Kongre programı (4 Aralık) gelince **Program** sekmesi doldurulacak.
 4. Davetiyede "Sayın Prof. Dr. ……" kısmı ve imza kişiye göre düzenlenecek.
 
+## Canlıya alma (cPanel / Plesk hosting, ör. guzel.net.tr)
+
+1. `content/site.json` → `contact.site` gerçek alan adı olsun (ör. `www.uhok2026.org`), `contact.email` gerçek e-posta.
+2. Google Search Console'da "URL ön eki" ile mülk eklenirse verilen HTML etiketindeki `content="..."` kodunu `gscVerification` alanına yazın. ("Alan adı" mülkü seçilirse DNS'e TXT kaydı eklenir, bu alana gerek kalmaz.)
+3. `python3 tools/build.py` ve ardından `python3 tools/yayin.py` çalıştırın. `yayin/uhok-site.zip` oluşur.
+4. Hosting panelinde: Dosya Yöneticisi → `public_html` → zip'i yükle → Çıkart (Extract).
+5. Panelde SSL: "SSL/TLS Status → Run AutoSSL" ya da "Let's Encrypt" ile alan adı ve www için ücretsiz sertifika.
+6. Search Console → Site haritaları → `sitemap.xml` gönderin.
+
+Pakette: HTTPS ve tek alan adına 301 yönlendirme, özel 404 sayfası, açılış ekranı, gzip, önbellek, güvenlik başlıkları, robots.txt, sitemap.xml.
+
 ## Boyut ve yayın
 
 - Site: yaklaşık **2 MB** (HTML + görseller). Sunucu tarafı gerektirmez; herhangi bir statik barındırmada (GitHub Pages, Netlify, üniversite sunucusu, ucuz bir paylaşımlı hosting) çalışır. Veritabanı yok.

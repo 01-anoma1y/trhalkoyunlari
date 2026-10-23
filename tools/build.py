@@ -117,14 +117,17 @@ def set_attrs(starttag, new):
 
 def build(text):
     # Önce veri betiği ve SEO bloğu
-    public = {k: v for k, v in DATA.items() if not k.startswith('_')}
+    public = {k: v for k, v in DATA.items() if not k.startswith('_') and k != 'gscVerification'}
     text = re.sub(r'(<script id="site-data" type="application/json">).*?(</script>)',
                   lambda m: m.group(1) + json.dumps(public, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + m.group(2), text, flags=re.S)
     base = DATA['baseUrl']
     seo = (f'<!-- seo:start (tools/build.py doldurur) -->\n<link rel="canonical" href="{base}">\n'
            f'<link rel="alternate" hreflang="tr" href="{base}">\n<link rel="alternate" hreflang="en" href="{base}?lang=en">\n'
            f'<link rel="alternate" hreflang="x-default" href="{base}">\n<meta property="og:url" content="{base}">\n'
-           f'<meta property="og:image" content="{base}assets/img/og-paylasim.jpg">\n<!-- seo:end -->')
+           f'<meta property="og:image" content="{base}assets/img/og-paylasim.jpg">\n')
+    if DATA.get('gscVerification'):  # Google Search Console doğrulama kodu
+        seo += f'<meta name="google-site-verification" content="{html.escape(DATA["gscVerification"])}">\n'
+    seo += '<!-- seo:end -->'
     text = re.sub(r'<!-- seo:start.*?<!-- seo:end -->', seo, text, flags=re.S)
     sc = Scan(text); sc.feed(text)
     for n in sorted(sc.hits, key=lambda n: n['start'], reverse=True):  # sondan başa, konumlar kaymasın
