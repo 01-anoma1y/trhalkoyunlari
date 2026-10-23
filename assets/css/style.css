@@ -68,16 +68,16 @@ nav.main a.active{background:var(--navy);color:#fff}
 .page.show{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-.page-head{background:url(../img/suluboya-zemin.jpg) center/cover;padding:64px 0 48px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.page-head{background:url(../img/halk-oyunlari-kongresi-suluboya-zemin.jpg) center/cover;padding:64px 0 48px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 .page-head .kicker{font:700 .78rem var(--head);letter-spacing:.18em;text-transform:uppercase;color:var(--tan)}
 .page-head h1{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;margin:.2em 0 .2em}
 .page-head p{max-width:720px;color:var(--ink-soft);margin:0}
-.page-head::after{content:"";position:absolute;right:-40px;bottom:-30px;width:300px;height:190px;background:url(../img/halk-oyunlari-figur-kucuk.png) center/contain no-repeat;opacity:.18}
+.page-head::after{content:"";position:absolute;right:-40px;bottom:-30px;width:300px;height:190px;background:url(../img/uluslararasi-halk-oyunlari-kongresi-figur-kucuk.png) center/contain no-repeat;opacity:.18}
 section.block{padding:56px 0}
 section.block.alt{background:#fff;border-block:1px solid var(--line)}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;background:url(../img/suluboya-zemin.jpg) center/cover;overflow:hidden}
+.hero{position:relative;background:url(../img/halk-oyunlari-kongresi-suluboya-zemin.jpg) center/cover;overflow:hidden}
 .hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:32px;align-items:center;padding:56px 0 64px}
 .hero .logos{display:flex;gap:16px;align-items:center;margin-bottom:22px;flex-wrap:wrap}
 .hero .logos img{height:52px;width:auto;max-width:100%}

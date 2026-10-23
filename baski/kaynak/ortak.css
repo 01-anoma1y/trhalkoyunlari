@@ -3,7 +3,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#fff}
 body{font-family:'Montserrat',sans-serif;color:var(--ink)}
-.sheet{position:relative;overflow:hidden;background:url(../../assets/img/suluboya-zemin.jpg) center/cover}
+.sheet{position:relative;overflow:hidden;background:url(../../assets/img/halk-oyunlari-kongresi-suluboya-zemin.jpg) center/cover}
 .logos{display:flex;align-items:center;justify-content:center;gap:28px}
 .logos .sep{width:2px;align-self:stretch;background:var(--soft);opacity:.35}
 .uhok{font-weight:500;letter-spacing:.14em}

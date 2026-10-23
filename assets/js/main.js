@@ -95,8 +95,8 @@ function render() {
 
 /* ---------- Dil ---------- */
 const META = {
-  tr: { title: '5. Uluslararası Halk Oyunları Kongresi | UHOK 2026', desc: '5. Uluslararası Halk Oyunları Kongresi (UHOK), 10–12 Aralık 2026, Sakarya Üniversitesi Turgut Özal Kültür ve Kongre Merkezi. Ana tema: Gelenek ve Gelecek Arasında: Halk Oyunlarında Aktarım, Dönüşüm ve Dijital Miras.' },
-  en: { title: '5th International Folk Dance Congress | IFDC 2026', desc: '5th International Folk Dance Congress (IFDC), 10–12 December 2026, Sakarya University Turgut Özal Culture and Congress Center. Theme: Between Tradition and the Future: Transmission, Transformation, and Digital Heritage in Folk Dance.' },
+  tr: { title: 'UHOK 2026 | 5. Uluslararası Halk Oyunları Kongresi – Sakarya', desc: '5. Uluslararası Halk Oyunları Kongresi 10–12 Aralık 2026’da Sakarya Üniversitesi’nde. Bildiri çağrısı açık, katılım ücretsiz.' },
+  en: { title: 'IFDC 2026 | 5th International Folk Dance Congress – Sakarya', desc: '5th International Folk Dance Congress, 10–12 December 2026 at Sakarya University, Türkiye. Call for papers is open; participation is free.' },
 };
 function setLang(l, keepPlace) {
   // Kullanıcının bulunduğu yeri korumak için ekranın üstündeki öğeyi işaretle
@@ -116,6 +116,8 @@ function setLang(l, keepPlace) {
   $('meta[name="description"]')?.setAttribute('content', META[l].desc);
   $('meta[property="og:title"]')?.setAttribute('content', META[l].title);
   $('meta[property="og:description"]')?.setAttribute('content', META[l].desc);
+  $('meta[name="twitter:title"]')?.setAttribute('content', META[l].title);
+  $('meta[name="twitter:description"]')?.setAttribute('content', META[l].desc);
   $('meta[property="og:locale"]')?.setAttribute('content', l === 'tr' ? 'tr_TR' : 'en_US');
   // Açılır listeler: "Türkçe / English" metninden dile göre tek dil; gönderilen değer iki dilli kalır
   $$('select option').forEach(o => {

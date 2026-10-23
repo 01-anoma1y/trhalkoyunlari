@@ -115,6 +115,31 @@ def set_attrs(starttag, new):
         else: starttag = starttag[:-1] + f' {k}="{e(v)}">'
     return starttag
 
+def event_schema(base):
+    """Google etkinlik kartı için schema.org Event (tarihler ve iletişim site.json'dan)."""
+    org = lambda n, u: {'@type': 'Organization', 'name': n, 'url': u}
+    return {
+        '@context': 'https://schema.org', '@type': 'EducationEvent',
+        'name': '5. Uluslararası Halk Oyunları Kongresi (UHOK 2026)',
+        'alternateName': '5th International Folk Dance Congress (IFDC 2026)',
+        'description': 'Ana tema: Gelenek ve Gelecek Arasında: Halk Oyunlarında Aktarım, Dönüşüm ve Dijital Miras.',
+        'startDate': f"{iso('congressStart')}T{DATA.get('congressStartTime', '09:00')}+03:00",
+        'endDate': iso('congressEnd'),
+        'eventStatus': 'https://schema.org/EventScheduled',
+        'eventAttendanceMode': 'https://schema.org/OfflineEventAttendanceMode',
+        'inLanguage': ['tr', 'en'],
+        'url': base,
+        'image': [f'{base}assets/img/uluslararasi-halk-oyunlari-kongresi-2026-sakarya.jpg'],
+        'location': {'@type': 'Place', 'name': 'Sakarya Üniversitesi Turgut Özal Kültür ve Kongre Merkezi',
+                     'address': {'@type': 'PostalAddress', 'streetAddress': 'Esentepe Kampüsü', 'addressLocality': 'Serdivan',
+                                 'addressRegion': 'Sakarya', 'postalCode': '54050', 'addressCountry': 'TR'}},
+        'organizer': [org('Sakarya Üniversitesi', 'https://www.sakarya.edu.tr/'),
+                      {'@type': 'Organization', 'name': 'Türkiye Halk Oyunları Federasyonu', 'alternateName': 'THOF'}],
+        'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'TRY', 'availability': 'https://schema.org/InStock',
+                   'url': base + '#kayit', 'validThrough': iso('registrationDeadline')},
+        'contactPoint': {'@type': 'ContactPoint', 'email': DATA['contact']['email'], 'contactType': 'customer support'},
+    }
+
 def build(text):
     # Önce veri betiği ve SEO bloğu
     public = {k: v for k, v in DATA.items() if not k.startswith('_') and k != 'gscVerification'}
@@ -124,7 +149,9 @@ def build(text):
     seo = (f'<!-- seo:start (tools/build.py doldurur) -->\n<link rel="canonical" href="{base}">\n'
            f'<link rel="alternate" hreflang="tr" href="{base}">\n<link rel="alternate" hreflang="en" href="{base}?lang=en">\n'
            f'<link rel="alternate" hreflang="x-default" href="{base}">\n<meta property="og:url" content="{base}">\n'
-           f'<meta property="og:image" content="{base}assets/img/og-paylasim.jpg">\n')
+           f'<meta property="og:image" content="{base}assets/img/uluslararasi-halk-oyunlari-kongresi-2026-sakarya.jpg">\n')
+    seo += f'<meta name="twitter:image" content="{base}assets/img/uluslararasi-halk-oyunlari-kongresi-2026-sakarya.jpg">\n'
+    seo += '<script type="application/ld+json">' + json.dumps(event_schema(base), ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + '</script>\n'
     if DATA.get('gscVerification'):  # Google Search Console doğrulama kodu
         seo += f'<meta name="google-site-verification" content="{html.escape(DATA["gscVerification"])}">\n'
     seo += '<!-- seo:end -->'

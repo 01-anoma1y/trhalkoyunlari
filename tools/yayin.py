@@ -10,7 +10,7 @@ Kullanım:  python3 tools/yayin.py                       (adres: content/site.js
   - robots.txt, sitemap.xml (Google Search Console için)
 Zip dosyasını hosting'in dosya yöneticisinde public_html içine yükleyip "çıkart" demek yeterlidir.
 """
-import datetime, hashlib, shutil, sys, zipfile
+import datetime, hashlib, re, shutil, sys, zipfile
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -21,8 +21,17 @@ ROOT = build.ROOT
 OUT = ROOT / 'yayin'
 SITE = OUT / 'site'
 FILES = ['index.html', '404.html']
-DIRS = ['assets']
-SKIP = {'thof-yatay.png', 'halk-oyunlari-figur-kucuk.png'}  # sitede kullanılmayan dosyalar
+
+def used_assets():
+    """index.html, 404.html, CSS ve JS içinde adı geçen assets/ dosyaları (kullanılmayanlar pakete girmez)."""
+    used = {'assets/css/style.css', 'assets/js/main.js'}
+    for src in ('index.html', '404.html', 'assets/css/style.css', 'assets/js/main.js'):
+        text = (ROOT / src).read_text(encoding='utf-8')
+        for m in re.findall(r'(?:assets/|\.\./)((?:img|logos|css|js)/[\w./-]+?\.(?:png|jpe?g|webp|svg|ico|css|js))', text):
+            used.add('assets/' + m)
+    missing = [u for u in used if not (ROOT / u).exists()]
+    if missing: sys.exit('Eksik dosya: ' + ', '.join(sorted(missing)))
+    return sorted(used)
 
 def live_url():
     if len(sys.argv) > 1: u = sys.argv[1]
@@ -90,8 +99,8 @@ def main():
         print(f'UYARI: canlı adres henüz geçici: {url} (content/site.json → contact.site)')
     if SITE.exists(): shutil.rmtree(SITE)
     SITE.mkdir(parents=True)
-    for d in DIRS:
-        shutil.copytree(ROOT / d, SITE / d, ignore=lambda _d, names: [n for n in names if n in SKIP])
+    for a in used_assets():
+        (SITE / a).parent.mkdir(parents=True, exist_ok=True); shutil.copy2(ROOT / a, SITE / a)
     build.DATA['baseUrl'] = url
     page, _ = build.build((ROOT / 'index.html').read_text(encoding='utf-8'))
     for a in ('assets/css/style.css', 'assets/js/main.js'):
