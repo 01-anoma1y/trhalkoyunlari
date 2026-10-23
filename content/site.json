@@ -1,8 +1,8 @@
 {
  "_not": "Sitedeki iletişim bilgileri, tarihler, kurullar ve program buradan gelir. Değiştirdikten sonra: python3 tools/build.py",
  "contact": {
-  "email": "yenimail@gmail.com",
-  "site": "www.siteadi.com",
+  "email": "thoffolkdancecongress@gmail.com",
+  "site": "www.thoffolkdancecongress.com",
   "phones": [
    {
     "name": "Arş. Gör. Dr. Gül KAPLAN EKEMEN",
